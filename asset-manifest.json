@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/softRyzenTest/static/css/main.7acaea2f.css",
-    "main.js": "/softRyzenTest/static/js/main.07d3183d.js",
+    "main.css": "/softRyzenTest/static/css/main.0a09010c.css",
+    "main.js": "/softRyzenTest/static/js/main.0e8a0423.js",
+    "static/js/221.db303bc3.chunk.js": "/softRyzenTest/static/js/221.db303bc3.chunk.js",
+    "static/js/671.af35c06d.chunk.js": "/softRyzenTest/static/js/671.af35c06d.chunk.js",
     "index.html": "/softRyzenTest/index.html",
-    "main.7acaea2f.css.map": "/softRyzenTest/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/softRyzenTest/static/js/main.07d3183d.js.map"
+    "static/media/Vector.svg": "/softRyzenTest/static/media/Vector.64b69de0699e22cd8ff9f330554bfb07.svg",
+    "main.0a09010c.css.map": "/softRyzenTest/static/css/main.0a09010c.css.map",
+    "main.0e8a0423.js.map": "/softRyzenTest/static/js/main.0e8a0423.js.map",
+    "221.db303bc3.chunk.js.map": "/softRyzenTest/static/js/221.db303bc3.chunk.js.map",
+    "671.af35c06d.chunk.js.map": "/softRyzenTest/static/js/671.af35c06d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.0a09010c.css",
+    "static/js/main.0e8a0423.js"
   ]
 }
