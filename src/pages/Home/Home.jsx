@@ -5,96 +5,6 @@ import { TbAdjustmentsHorizontal } from 'react-icons/tb';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { IoIosArrowRoundDown, IoIosArrowRoundUp } from 'react-icons/io';
 
-// import {
-//   Menu,
-//   MenuBtn,
-//   FilterText,
-//   CreateNewEvent,
-//   SortListWrap,
-//   SortList,
-//   SortListItem,
-//   SortListItemButton,
-//   SortListItemText,
-// } from './Home.styled';
-
-// const Home = () => {
-//   const [showSortingMenu, setShowSortingMenu] = useState(false);
-
-//   const handleSortMenu = e => {
-//     setShowSortingMenu(!showSortingMenu);
-//     console.log(!showSortingMenu);
-//   };
-
-//   return (
-//     <div>
-//       <Menu>
-//         {/* <SortListWrap> */}
-//         <MenuBtn type="button">
-//           <LuFilter size={24} color="#7B61FF" />
-//         </MenuBtn>
-//         {/* </SortListWrap> */}
-
-//         {/* <SortListWrap> */}
-//           <MenuBtn type="button" onClick={() => handleSortMenu()}>
-//             <FilterText $showSortMenu={showSortingMenu}>Sort by</FilterText>
-//             <TbAdjustmentsHorizontal size={24} color="#7B61FF" />
-//           </MenuBtn>
-
-//           <SortList $showSortMenu={showSortingMenu}>
-//             <SortListItem>
-//               <SortListItemButton type="button">
-//                 <SortListItemText>by name</SortListItemText>
-//                 <IoIosArrowRoundUp size={24} color="#ACA7C3" />
-//               </SortListItemButton>
-//             </SortListItem>
-
-//             <SortListItem>
-//               <SortListItemButton type="button">
-//                 <SortListItemText>by name</SortListItemText>
-//                 <IoIosArrowRoundDown size={24} color="#ACA7C3" />
-//               </SortListItemButton>
-//             </SortListItem>
-
-//             <SortListItem>
-//               <SortListItemButton type="button">
-//                 <SortListItemText>by data</SortListItemText>
-//                 <IoIosArrowRoundUp size={24} color="#ACA7C3" />
-//               </SortListItemButton>
-//             </SortListItem>
-
-//             <SortListItem>
-//               <SortListItemButton type="button">
-//                 <SortListItemText>by data</SortListItemText>
-//                 <IoIosArrowRoundDown size={24} color="#ACA7C3" />
-//               </SortListItemButton>
-//             </SortListItem>
-
-//             <SortListItem>
-//               <SortListItemButton type="button">
-//                 <SortListItemText>by priority</SortListItemText>
-//                 <IoIosArrowRoundUp size={24} color="#ACA7C3" />
-//               </SortListItemButton>
-//             </SortListItem>
-
-//             <SortListItem>
-//               <SortListItemButton type="button">
-//                 <SortListItemText>by priority</SortListItemText>
-//                 <IoIosArrowRoundDown size={24} color="#ACA7C3" />
-//               </SortListItemButton>
-//             </SortListItem>
-//           </SortList>
-//         {/* </SortListWrap> */}
-
-//         <div>
-//           <CreateNewEvent>
-//             <AiOutlinePlus size={24} color="#FFFFFF" />
-//           </CreateNewEvent>
-//         </div>
-//       </Menu>
-//     </div>
-//   );
-// };
-
 import {
   Menu,
   FilterButton,
@@ -104,6 +14,9 @@ import {
   SortTextWrap,
   SortText,
   SortList,
+  SortListItem,
+  SortListItemButton,
+  SortListItemButtonText,
 } from './Home.styled';
 const Home = () => {
   const [showSortingMenu, setShowSortingMenu] = useState(false);
@@ -115,11 +28,9 @@ const Home = () => {
 
   return (
     <Menu>
-      {!showSortingMenu && (
-        <FilterButton type="button">
-          <LuFilter size={24} color="#7B61FF" />
-        </FilterButton>
-      )}
+      <FilterButton type="button">
+        <LuFilter size={24} color="#7B61FF" />
+      </FilterButton>
 
       <SortButtonWrap>
         <SortButton
@@ -139,9 +50,44 @@ const Home = () => {
         </SortButton>
 
         <SortList $showSortMenu={showSortingMenu}>
-          <li>
-            <button type="button"></button>
-          </li>
+          <SortListItem>
+            <SortListItemButton type="button">
+              <SortListItemButtonText>by name</SortListItemButtonText>
+              <IoIosArrowRoundUp size={24} color="#ACA7C3" />
+            </SortListItemButton>
+          </SortListItem>
+          <SortListItem>
+            <SortListItemButton type="button">
+              <SortListItemButtonText>by name</SortListItemButtonText>
+              <IoIosArrowRoundDown size={24} color="#ACA7C3" />
+            </SortListItemButton>
+          </SortListItem>
+
+          <SortListItem>
+            <SortListItemButton type="button">
+              <SortListItemButtonText>by data</SortListItemButtonText>
+              <IoIosArrowRoundUp size={24} color="#ACA7C3" />
+            </SortListItemButton>
+          </SortListItem>
+          <SortListItem>
+            <SortListItemButton type="button">
+              <SortListItemButtonText>by data</SortListItemButtonText>
+              <IoIosArrowRoundDown size={24} color="#ACA7C3" />
+            </SortListItemButton>
+          </SortListItem>
+
+          <SortListItem>
+            <SortListItemButton type="button">
+              <SortListItemButtonText>by priority</SortListItemButtonText>
+              <IoIosArrowRoundUp size={24} color="#ACA7C3" />
+            </SortListItemButton>
+          </SortListItem>
+          <SortListItem>
+            <SortListItemButton type="button">
+              <SortListItemButtonText>by priority</SortListItemButtonText>
+              <IoIosArrowRoundDown size={24} color="#ACA7C3" />
+            </SortListItemButton>
+          </SortListItem>
         </SortList>
       </SortButtonWrap>
 
