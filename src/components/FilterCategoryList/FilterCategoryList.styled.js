@@ -54,7 +54,7 @@ export const FilterTextWrap = styled.span`
   box-shadow: ${p => p.theme.shadows.button};
 
   opacity: ${p => (p.$filterMenu ? 1 : 0)};
-  transform: ${p => (p.$filterMenu ? 'translateX(0)' : 'translateX(-102px)')};
+  transform: ${p => (p.$filterMenu ? 'translateX(0)' : 'translateX(-34px)')};
   pointer-events: ${p => (p.$filterMenu ? 'all' : 'none')};
   transition: transform 250ms ease-in-out 100ms, opacity 200ms ease-in-out 100ms;
 `;

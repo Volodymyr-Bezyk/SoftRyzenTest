@@ -6,6 +6,7 @@ import Layout from './Layout';
 import theme from 'theme/theme';
 
 const Home = lazy(() => import('pages/Home'));
+const NewEvent = lazy(() => import('pages/NewEvent'));
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="newEvent" element={<NewEvent />} />
         </Route>
       </Routes>
     </ThemeProvider>

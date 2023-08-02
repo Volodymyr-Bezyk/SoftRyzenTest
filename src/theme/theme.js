@@ -9,6 +9,11 @@ const theme = {
     sortListItemColor: '#aca7c3',
     buttonTextColor: '#3F3F3F',
     buttonHoverBg: '#6243FF',
+    highPriority: '#FF2B77',
+    mediumPriority: '#E2A300',
+    lowPriority: '#6BD475',
+    title: '#1C1B1F',
+    text: '#49454F',
   },
   space: [
     0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,
@@ -35,6 +40,7 @@ const theme = {
     langButton: '8px',
     button: '8px',
     input: '8px',
+    card: '12px',
   },
 
   borders: { main: '1px solid #7b61ff' },
@@ -43,6 +49,7 @@ const theme = {
     langButton: '2px 4px 9px 0px rgba(166, 141, 174, 0.28)',
     inputShadow: '2px 4px 9px 0px rgba(166, 141, 174, 0.28)',
     button: '2px 4px 9px 0px rgba(166, 141, 174, 0.28);',
+    card: '2px 4px 9px 0px rgba(166, 141, 174, 0.28);',
   },
 
   screens: {

@@ -53,7 +53,8 @@ export const SortTextWrap = styled.span`
   box-shadow: ${p => p.theme.shadows.button};
 
   opacity: ${p => (p.$showSortMenu ? 1 : 0)};
-  transform: ${p => (p.$showSortMenu ? 'translateX(-114px)' : 'translateX(0)')};
+  transform: ${p =>
+    p.$showSortMenu ? 'translateX(-114px)' : 'translateX(-80px)'};
   pointer-events: ${p => (p.$showSortMenu ? 'all' : 'none')};
   transition: transform 250ms ease-in-out 100ms, opacity 200ms ease-in-out 100ms;
 `;
