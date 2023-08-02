@@ -14,17 +14,14 @@ import {
 } from './FilterCategoryList.styled';
 
 const FilterByCaregory = () => {
-  const [showFilterMenu, setShowFilterMenu] = useState(true);
+  const [showFilterMenu, setShowFilterMenu] = useState(false);
 
   return (
     <FilterButtonWrap>
       <FilterButton
         $filterMenu={showFilterMenu}
         type="button"
-        onClick={() => {
-          setShowFilterMenu(!showFilterMenu);
-          console.log(!showFilterMenu);
-        }}
+        onClick={() => setShowFilterMenu(!showFilterMenu)}
       >
         <LuFilter size={24} />
         <FilterTextWrap $filterMenu={showFilterMenu}>

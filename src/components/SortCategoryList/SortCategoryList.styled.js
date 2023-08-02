@@ -24,12 +24,11 @@ export const SortButton = styled.button`
     transform: ${p => (p.$showSortMenu ? 'translateX(-8px)' : 'translateX(0)')};
     transition: transform 250ms ease-in-out 100ms, opacity 250ms ease-in-out,
       color 250ms ease-in-out;
-
     z-index: ${p => (p.$showSortMenu ? 2 : 0)};
   }
 
   &:hover,
-  :focus {
+  &:focus {
     svg {
       color: ${p => p.theme.colors.accent};
     }
@@ -104,7 +103,7 @@ export const SortListItemButton = styled.button`
   background-color: ${p => p.theme.colors.white};
 
   &:hover,
-  :focus {
+  &:focus {
     span {
       color: ${p => p.theme.colors.accent};
     }

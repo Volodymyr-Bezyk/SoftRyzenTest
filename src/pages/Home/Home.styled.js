@@ -17,4 +17,10 @@ export const AddEventLink = styled(Link)`
   padding-right: ${p => p.theme.space[8]}px;
   border-radius: ${p => p.theme.radii.button};
   box-shadow: ${p => p.theme.shadows.button};
+  transition: background-color 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: ${p => p.theme.colors.buttonHoverBg};
+  }
 `;

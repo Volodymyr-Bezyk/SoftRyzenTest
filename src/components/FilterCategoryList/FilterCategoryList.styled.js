@@ -28,7 +28,7 @@ export const FilterButton = styled.button`
   }
 
   &:hover,
-  :focus {
+  &:focus {
     svg {
       color: ${p => p.theme.colors.accent};
     }
@@ -102,7 +102,7 @@ export const FilterListItemButton = styled.button`
   background-color: ${p => p.theme.colors.white};
 
   &:hover,
-  :focus {
+  &:focus {
     span {
       color: ${p => p.theme.colors.accent};
     }
