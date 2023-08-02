@@ -74,6 +74,7 @@ export const SortList = styled.ul`
 
   width: 170px;
   padding: ${p => p.theme.space[2]}px 0;
+  z-index: 1;
 
   border-bottom-left-radius: ${p => p.theme.radii.button};
   border-bottom-right-radius: ${p => p.theme.radii.button};
