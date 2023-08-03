@@ -34,10 +34,10 @@ const SortByCategory = () => {
       </SortButton>
 
       <SortList $showSortMenu={showSortingMenu}>
-        {sortListOptions.map(({ text, type }, idx) => (
+        {sortListOptions.map(({ label, type }, idx) => (
           <SortListItem key={idx}>
             <SortListItemButton type="button">
-              <SortListItemButtonText>{text}</SortListItemButtonText>
+              <SortListItemButtonText>{label}</SortListItemButtonText>
               {type === 'inc' ? (
                 <IoIosArrowRoundUp size={24} color="#ACA7C3" />
               ) : (

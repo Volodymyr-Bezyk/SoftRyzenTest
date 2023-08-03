@@ -68,6 +68,7 @@ export const CardCategory = styled.span`
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[6]}px;
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.button};
+  box-shadow: ${p => p.theme.shadows.card};
 
   color: ${p => p.theme.colors.accent};
   font-family: ${p => p.theme.fontFamily.primary};
@@ -75,8 +76,7 @@ export const CardCategory = styled.span`
   font-weight: ${p => p.theme.fontWeights.medium};
   line-height: 1.43;
 
-  border-radius: ${p => p.theme.radii.button};
-  box-shadow: ${p => p.theme.shadows.card};
+  text-transform: capitalize;
 `;
 
 export const CardPriority = styled.span`
@@ -84,19 +84,19 @@ export const CardPriority = styled.span`
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[6]}px;
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.button};
+  box-shadow: ${p => p.theme.shadows.card};
 
   color: ${p =>
-    p.$priority === 'Low'
+    p.$priority === 'low'
       ? p.theme.colors.lowPriority
       : p.theme.colors.mediumPriority};
-  color: ${p => p.$priority === 'High' && p.theme.colors.highPriority};
+  color: ${p => p.$priority === 'high' && p.theme.colors.highPriority};
   font-family: ${p => p.theme.fontFamily.primary};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.medium};
   line-height: 1.43;
 
-  border-radius: ${p => p.theme.radii.button};
-  box-shadow: ${p => p.theme.shadows.card};
+  text-transform: capitalize;
 `;
 
 export const CardLocation = styled.span`

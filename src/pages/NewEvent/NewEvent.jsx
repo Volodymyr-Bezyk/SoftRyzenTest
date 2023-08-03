@@ -1,3 +1,5 @@
+import { useForm } from 'react-hook-form';
+import Select from 'react-select';
 import { IoIosClose } from 'react-icons/io';
 import BackLink from 'components/BackLink';
 import PageContentWrapperWithTitle from 'components/PageContentWrapperWithTitle';
@@ -15,16 +17,34 @@ import {
 } from './NewEvent.styled';
 
 const NewEvent = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = data => console.log(data);
+
+  const options = [
+    { value: 'High', label: 'High' },
+    { value: 'Medium', label: 'Medium' },
+    { value: 'Low', label: 'Low' },
+  ];
+
   return (
     <>
       <BackLink />
       <PageContentWrapperWithTitle title="Create new event">
         <FormWrap>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <FormInnerDelimeter>
               <Formlabel>
                 <FormLabelText>Title</FormLabelText>
-                <FormLabelInput type="text" />
+                <FormLabelInput
+                  type="text"
+                  {...register('title', { required: true })}
+                />
                 <ClearFormInputButton type="button">
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
@@ -33,7 +53,9 @@ const NewEvent = () => {
 
               <Formlabel>
                 <FormLabelText>Description</FormLabelText>
-                <FormLabelTextArea></FormLabelTextArea>
+                <FormLabelTextArea
+                  {...register('description', { required: true })}
+                ></FormLabelTextArea>
                 <ClearFormInputButton type="button">
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
@@ -42,19 +64,28 @@ const NewEvent = () => {
 
               <Formlabel>
                 <FormLabelText>Select date</FormLabelText>
-                <FormLabelSelect></FormLabelSelect>
+                <FormLabelInput
+                  type="date"
+                  {...register('date', { required: true })}
+                />
                 <ValidationErrorText>invalid input</ValidationErrorText>
               </Formlabel>
 
               <Formlabel>
                 <FormLabelText>Select time</FormLabelText>
-                <FormLabelSelect></FormLabelSelect>
+                <FormLabelInput
+                  type="time"
+                  {...register('time', { required: true })}
+                />
                 <ValidationErrorText>invalid input</ValidationErrorText>
               </Formlabel>
 
               <Formlabel>
                 <FormLabelText>Location</FormLabelText>
-                <FormLabelInput type="text" />
+                <FormLabelInput
+                  type="text"
+                  {...register('location', { required: true })}
+                />
                 <ClearFormInputButton type="button">
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
@@ -63,13 +94,21 @@ const NewEvent = () => {
 
               <Formlabel>
                 <FormLabelText>Category</FormLabelText>
-                <FormLabelSelect></FormLabelSelect>
+                <Select options={options} />
+                {/* <FormLabelSelect {...register('category')}>
+                  <option value={'High'}>High</option>
+                  <option value={'Medium'}>Medium</option>
+                  <option value={'Low'}>Low</option>
+                </FormLabelSelect> */}
                 <ValidationErrorText>invalid input</ValidationErrorText>
               </Formlabel>
 
               <Formlabel>
                 <FormLabelText>Add picture</FormLabelText>
-                <FormLabelInput type="text" />
+                <FormLabelInput
+                  type="text"
+                  {...register('picture', { required: true })}
+                />
                 <ClearFormInputButton type="button">
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
@@ -78,7 +117,11 @@ const NewEvent = () => {
 
               <Formlabel>
                 <FormLabelText>Priority</FormLabelText>
-                <FormLabelSelect></FormLabelSelect>
+                <FormLabelSelect {...register('priority')}>
+                  <option value={'Art'}>Art</option>
+                  <option value={'Business'}>Business</option>
+                  <option value={'Party'}>Party</option>
+                </FormLabelSelect>
                 <ValidationErrorText>invalid input</ValidationErrorText>
               </Formlabel>
             </FormInnerDelimeter>

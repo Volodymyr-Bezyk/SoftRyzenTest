@@ -80,13 +80,6 @@ export const FormLabelInput = styled.input`
   line-height: 1.5;
 
   transition: border-color 250ms ease-in-out;
-
-  /* &::placeholder {
-    color: ${p => p.theme.colors.placeholderColor};
-    font-family: ${p => p.theme.fontFamily.primary};
-    font-size: ${p => p.theme.fontSizes[3]}px;
-    font-weight: ${p => p.theme.fontWeights.light};
-  } */
 `;
 
 export const FormLabelTextArea = styled.textarea`

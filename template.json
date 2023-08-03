@@ -5,9 +5,9 @@
     "time": "10:00",
     "date": "10.10.2023",
     "location": "Kennithborough",
-    "category": "Business",
+    "category": "business",
     "picture": "https://images.pexels.com/photos/1476321/pexels-photo-1476321.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "1"
   },
   {
@@ -16,9 +16,9 @@
     "time": "10:00",
     "date": "08.10.2023",
     "location": "Blickland",
-    "category": "Business",
+    "category": "business",
     "picture": "https://images.pexels.com/photos/2887582/pexels-photo-2887582.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "priority": "Low",
+    "priority": "low",
     "id": "2"
   },
   {
@@ -27,9 +27,9 @@
     "time": "10:00",
     "date": "07.11.2024",
     "location": "Ellenworth",
-    "category": "Business",
+    "category": "business",
     "picture": "https://images.pexels.com/photos/2148216/pexels-photo-2148216.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "3"
   },
   {
@@ -38,9 +38,9 @@
     "time": "10:00",
     "date": "10.08.2023",
     "location": "Erdmanside",
-    "category": "Business",
+    "category": "business",
     "picture": "https://images.pexels.com/photos/301943/pexels-photo-301943.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "4"
   },
   {
@@ -49,9 +49,9 @@
     "time": "10:00",
     "date": "22.11.2023",
     "location": "Conroe",
-    "category": "Business",
+    "category": "business",
     "picture": "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "priority": "High",
+    "priority": "high",
     "id": "5"
   },
   {
@@ -60,9 +60,9 @@
     "time": "10:00",
     "date": "23.10.2023",
     "location": "Agnesfield",
-    "category": "Business",
+    "category": "business",
     "picture": "https://images.pexels.com/photos/159213/hall-congress-architecture-building-159213.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "priority": "Low",
+    "priority": "low",
     "id": "6"
   },
   {
@@ -71,9 +71,9 @@
     "time": "10:00",
     "date": "12.12.2023",
     "location": "North Emmett",
-    "category": "Business",
+    "category": "business",
     "picture": "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "priority": "High",
+    "priority": "high",
     "id": "7"
   },
   {
@@ -82,9 +82,9 @@
     "time": "10:00",
     "date": "01.02.2024",
     "location": "Carlosstead",
-    "category": "Sport",
+    "category": "sport",
     "picture": "https://images.pexels.com/photos/15869385/pexels-photo-15869385.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "8"
   },
   {
@@ -93,9 +93,9 @@
     "time": "10:00",
     "date": "25.07.2024",
     "location": "Parkercester",
-    "category": "Sport",
+    "category": "sport",
     "picture": "https://images.pexels.com/photos/6999241/pexels-photo-6999241.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "9"
   },
   {
@@ -104,9 +104,9 @@
     "time": "10:00",
     "date": "11.11.2023",
     "location": "East Princeworth",
-    "category": "Sport",
+    "category": "sport",
     "picture": "https://images.pexels.com/photos/6203636/pexels-photo-6203636.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "10"
   },
   {
@@ -115,9 +115,9 @@
     "time": "10:00",
     "date": "15.12.2023",
     "location": "Angelinaside",
-    "category": "Sport",
+    "category": "sport",
     "picture": "https://images.pexels.com/photos/3772226/pexels-photo-3772226.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "11"
   },
   {
@@ -126,9 +126,9 @@
     "time": "10:00",
     "date": "30.12.2023",
     "location": "Millcreek",
-    "category": "Sport",
+    "category": "sport",
     "picture": "https://images.pexels.com/photos/1325654/pexels-photo-1325654.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "12"
   },
   {
@@ -137,9 +137,9 @@
     "time": "10:00",
     "date": "05.01.2024",
     "location": "Erynland",
-    "category": "Party",
+    "category": "party",
     "picture": "https://images.pexels.com/photos/3379261/pexels-photo-3379261.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "13"
   },
   {
@@ -148,9 +148,9 @@
     "time": "10:00",
     "date": "08.12.2023",
     "location": "West Gregorystad",
-    "category": "Party",
+    "category": "party",
     "picture": "https://images.pexels.com/photos/4684185/pexels-photo-4684185.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "14"
   },
   {
@@ -159,9 +159,9 @@
     "time": "10:00",
     "date": "06.06.2024",
     "location": "Scottsdale",
-    "category": "Party",
+    "category": "party",
     "picture": "https://images.pexels.com/photos/1230397/pexels-photo-1230397.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "15"
   },
   {
@@ -170,9 +170,9 @@
     "time": "10:00",
     "date": "20.03.2024",
     "location": "Lake Humbertoland",
-    "category": "Party",
+    "category": "party",
     "picture": "https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "16"
   },
   {
@@ -181,9 +181,9 @@
     "time": "10:00",
     "date": "19.08.2023",
     "location": "West Nina",
-    "category": "Conference",
+    "category": "conference",
     "picture": "https://images.pexels.com/photos/2240771/pexels-photo-2240771.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "17"
   },
   {
@@ -192,9 +192,9 @@
     "time": "10:00",
     "date": "20.09.2023",
     "location": "Lake Destiny",
-    "category": "Conference",
+    "category": "conference",
     "picture": "https://images.pexels.com/photos/3184660/pexels-photo-3184660.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "18"
   },
   {
@@ -203,9 +203,9 @@
     "time": "10:00",
     "date": "10.10.2023",
     "location": "Portsmouth",
-    "category": "Conference",
+    "category": "conference",
     "picture": "https://images.pexels.com/photos/3321799/pexels-photo-3321799.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "19"
   },
   {
@@ -214,9 +214,9 @@
     "time": "10:00",
     "date": "17.08.2023",
     "location": "Abernathyborough",
-    "category": "Conference",
+    "category": "conference",
     "picture": "https://images.pexels.com/photos/159806/meeting-modern-room-conference-159806.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "20"
   },
   {
@@ -225,9 +225,9 @@
     "time": "10:00",
     "date": "14.11.2023",
     "location": "West Babylon",
-    "category": "Conference",
+    "category": "conference",
     "picture": "https://images.pexels.com/photos/3321796/pexels-photo-3321796.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "21"
   },
   {
@@ -236,9 +236,9 @@
     "time": "10:00",
     "date": "15.12.2023",
     "location": "Lake Larueburgh",
-    "category": "Workshop",
+    "category": "workshop",
     "picture": "https://images.pexels.com/photos/162625/grinder-hitachi-power-tool-flexible-162625.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "22"
   },
   {
@@ -247,9 +247,9 @@
     "time": "10:00",
     "date": "06.12.2023",
     "location": "New Cornell",
-    "category": "Workshop",
+    "category": "workshop",
     "picture": "https://images.pexels.com/photos/115558/pexels-photo-115558.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "23"
   },
   {
@@ -258,9 +258,9 @@
     "time": "10:00",
     "date": "20.09.2023",
     "location": "Port Britneystead",
-    "category": "Workshop",
+    "category": "workshop",
     "picture": "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "24"
   },
   {
@@ -269,9 +269,9 @@
     "time": "10:00",
     "date": "29.08.2023",
     "location": "San Juan",
-    "category": "Workshop",
+    "category": "workshop",
     "picture": "https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "25"
   },
   {
@@ -280,9 +280,9 @@
     "time": "10:00",
     "date": "30.09.2023",
     "location": "Champlinshire",
-    "category": "Art",
+    "category": "art",
     "picture": "https://images.pexels.com/photos/3095769/pexels-photo-3095769.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "26"
   },
   {
@@ -291,9 +291,9 @@
     "time": "10:00",
     "date": "10.12.2023",
     "location": "Pomona",
-    "category": "Art",
+    "category": "art",
     "picture": "https://images.pexels.com/photos/1575841/pexels-photo-1575841.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "27"
   },
   {
@@ -302,9 +302,9 @@
     "time": "10:00",
     "date": "16.06.2024",
     "location": "West Jackworth",
-    "category": "Art",
+    "category": "art",
     "picture": "https://images.pexels.com/photos/3094218/pexels-photo-3094218.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "28"
   },
   {
@@ -313,9 +313,9 @@
     "time": "10:00",
     "date": "30.09.2023",
     "location": "Fond du Lac",
-    "category": "Art",
+    "category": "art",
     "picture": "https://images.pexels.com/photos/2372982/pexels-photo-2372982.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "29"
   },
   {
@@ -324,9 +324,9 @@
     "time": "10:00",
     "date": "10.10.2024",
     "location": "Aricside",
-    "category": "Art",
+    "category": "art",
     "picture": "https://images.pexels.com/photos/2086361/pexels-photo-2086361.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "30"
   },
   {
@@ -335,9 +335,9 @@
     "time": "10:00",
     "date": "16.11.2023",
     "location": "Myronshire",
-    "category": "Music",
+    "category": "music",
     "picture": "https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Medium",
+    "priority": "medium",
     "id": "31"
   },
   {
@@ -346,9 +346,9 @@
     "time": "10:00",
     "date": "15.11.2023",
     "location": "Florin",
-    "category": "Music",
+    "category": "music",
     "picture": "https://images.pexels.com/photos/1885213/pexels-photo-1885213.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "Low",
+    "priority": "low",
     "id": "32"
   },
   {
@@ -357,9 +357,9 @@
     "time": "10:00",
     "date": "08.09.2023",
     "location": "Guiseppefurt",
-    "category": "Music",
+    "category": "music",
     "picture": "https://images.pexels.com/photos/4709822/pexels-photo-4709822.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "priority": "High",
+    "priority": "high",
     "id": "33"
   }
 ]

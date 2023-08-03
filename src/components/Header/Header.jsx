@@ -33,12 +33,10 @@ const Header = () => {
         </LanguageButton>
 
         <LanguageList $langList={showLanguages}>
-          {languagesOptions.map((language, idx) => (
+          {languagesOptions.map(({ label }, idx) => (
             <LanguageListItem key={idx}>
               <LanguageListItemButton type="button">
-                <LanguageListItemButtonText>
-                  {language}
-                </LanguageListItemButtonText>
+                <LanguageListItemButtonText>{label}</LanguageListItemButtonText>
               </LanguageListItemButton>
             </LanguageListItem>
           ))}

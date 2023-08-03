@@ -32,10 +32,10 @@ const FilterByCaregory = () => {
       </FilterButton>
 
       <FilterList $filterMenu={showFilterMenu}>
-        {filterOptions.map((option, idx) => (
+        {filterOptions.map(({ label }, idx) => (
           <FilterListItem key={idx}>
             <FilterListItemButton>
-              <FilterListItemText>{option}</FilterListItemText>
+              <FilterListItemText>{label}</FilterListItemText>
             </FilterListItemButton>
           </FilterListItem>
         ))}
