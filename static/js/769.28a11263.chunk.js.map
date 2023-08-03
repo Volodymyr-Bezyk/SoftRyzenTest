@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/769.28a11263.chunk.js","mappings":"gMAIA,EAJiB,WACf,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,kBACd,C","sources":["pages/NewEvent/NewEvent.jsx"],"sourcesContent":["const NewEvent = () => {\n  return <div>New event page</div>;\n};\n\nexport default NewEvent;\n"],"names":["_jsx","children"],"sourceRoot":""}
