@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 import { IoIosArrowRoundBack } from 'react-icons/io';
 import { getOneEventById } from 'utils/getOneEventById';
-import axios from 'axios';
 
 import {
   BackLink,
@@ -39,6 +38,8 @@ const Event = () => {
     })();
     return () => {};
   }, [eventId]);
+
+  if (!event) return;
 
   const {
     title,
