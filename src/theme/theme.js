@@ -14,6 +14,7 @@ const theme = {
     lowPriority: '#6BD475',
     title: '#1C1B1F',
     text: '#49454F',
+    hover: '#6243FF',
   },
   space: [
     0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,
@@ -43,9 +44,14 @@ const theme = {
     button: '8px',
     input: '8px',
     card: '12px',
+    primary: '8px',
+    secondary: '4px',
   },
 
-  borders: { main: '1px solid #7b61ff' },
+  borders: {
+    main: '1px solid #7b61ff',
+    button: ' 1px solid var(--accent, #7B61FF);',
+  },
 
   shadows: {
     langButton: '2px 4px 9px 0px rgba(166, 141, 174, 0.28)',
@@ -62,3 +68,5 @@ const theme = {
 };
 
 export default theme;
+
+// @media (min-width: ${p => p.theme.screens.desktop}) {}

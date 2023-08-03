@@ -1,6 +1,5 @@
 import EllipsisText from 'react-ellipsis-text';
 import { useEffect, useState } from 'react';
-// import { events } from 'constants/events';
 import { getEvents } from 'utils/getEvents';
 import defaultPhoto from '../../assets/default.jpg';
 
