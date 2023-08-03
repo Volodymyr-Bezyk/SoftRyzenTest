@@ -86,12 +86,11 @@ export const CardPriority = styled.span`
 export const CardImg = styled.img`
   width: 272px;
   height: 336px;
-  background-size: cover;
+  object-fit: cover;
 
   @media (min-width: ${p => p.theme.screens.tablet}) {
     width: 332px;
     height: 336px;
-    background-size: contain;
   }
 
   @media (min-width: ${p => p.theme.screens.desktop}) {

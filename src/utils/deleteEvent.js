@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-export const getOneEventById = async id => {
+export const deleteEvents = async id => {
   try {
-    const data = await axios.get(
+    await axios.delete(
       `https://64c88fa6a1fe0128fbd5e8b1.mockapi.io/events/${id}`
     );
-
-    return data;
   } catch (error) {
     return;
   }

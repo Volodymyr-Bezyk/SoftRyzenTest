@@ -8,6 +8,7 @@ import theme from 'theme/theme';
 const Home = lazy(() => import('pages/Home'));
 const NewEvent = lazy(() => import('pages/NewEvent'));
 const Event = lazy(() => import('pages/Event'));
+const EditEvent = lazy(() => import('pages/EditEvent'));
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="newEvent" element={<NewEvent />} />
           <Route path="event/:eventId" element={<Event />} />
+          <Route path="edit/:eventId" element={<EditEvent />} />
         </Route>
       </Routes>
     </ThemeProvider>
