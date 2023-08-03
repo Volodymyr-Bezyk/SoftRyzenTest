@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/softRyzenTest/static/css/main.d8d5a9b6.css",
-    "main.js": "/softRyzenTest/static/js/main.08a55876.js",
+    "main.js": "/softRyzenTest/static/js/main.bb518496.js",
     "static/js/890.f1fe2d13.chunk.js": "/softRyzenTest/static/js/890.f1fe2d13.chunk.js",
     "static/js/769.28a11263.chunk.js": "/softRyzenTest/static/js/769.28a11263.chunk.js",
-    "static/js/409.005292d6.chunk.js": "/softRyzenTest/static/js/409.005292d6.chunk.js",
+    "static/js/463.fab3f24c.chunk.js": "/softRyzenTest/static/js/463.fab3f24c.chunk.js",
     "static/js/152.7c061d88.chunk.js": "/softRyzenTest/static/js/152.7c061d88.chunk.js",
+    "static/media/defaultWide.jpg": "/softRyzenTest/static/media/defaultWide.ccf76055a15049202fb4.jpg",
     "static/media/default.jpg": "/softRyzenTest/static/media/default.fc42fdb980b9e6cc1c1a.jpg",
     "index.html": "/softRyzenTest/index.html",
     "static/media/Vector.svg": "/softRyzenTest/static/media/Vector.64b69de0699e22cd8ff9f330554bfb07.svg",
     "main.d8d5a9b6.css.map": "/softRyzenTest/static/css/main.d8d5a9b6.css.map",
-    "main.08a55876.js.map": "/softRyzenTest/static/js/main.08a55876.js.map",
+    "main.bb518496.js.map": "/softRyzenTest/static/js/main.bb518496.js.map",
     "890.f1fe2d13.chunk.js.map": "/softRyzenTest/static/js/890.f1fe2d13.chunk.js.map",
     "769.28a11263.chunk.js.map": "/softRyzenTest/static/js/769.28a11263.chunk.js.map",
-    "409.005292d6.chunk.js.map": "/softRyzenTest/static/js/409.005292d6.chunk.js.map",
+    "463.fab3f24c.chunk.js.map": "/softRyzenTest/static/js/463.fab3f24c.chunk.js.map",
     "152.7c061d88.chunk.js.map": "/softRyzenTest/static/js/152.7c061d88.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d8d5a9b6.css",
-    "static/js/main.08a55876.js"
+    "static/js/main.bb518496.js"
   ]
 }
