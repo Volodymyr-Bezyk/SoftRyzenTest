@@ -5,6 +5,10 @@ export const HeaderStyled = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-bottom: ${p => p.theme.space[12]}px;
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    margin-bottom: ${p => p.theme.space[0]}px;
+  }
 `;
 
 export const LogoText = styled.p`

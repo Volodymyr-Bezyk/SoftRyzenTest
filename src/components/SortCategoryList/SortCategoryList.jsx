@@ -8,6 +8,7 @@ import {
   SortButton,
   SortTextWrap,
   SortText,
+  SortTextMobile,
   SortList,
   SortListItem,
   SortListItemButton,
@@ -25,9 +26,10 @@ const SortByCategory = () => {
         onClick={() => setShowSortingMenu(!showSortingMenu)}
       >
         <SortTextWrap $showSortMenu={showSortingMenu}>
-          <SortText>Sort by</SortText>
+          <SortTextMobile>Sort by</SortTextMobile>
         </SortTextWrap>
 
+        <SortText>Sort by</SortText>
         <TbAdjustmentsHorizontal size={24} />
       </SortButton>
 

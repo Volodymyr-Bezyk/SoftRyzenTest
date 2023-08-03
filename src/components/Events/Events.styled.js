@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 
 export const EventList = styled.ul`
   margin-top: ${p => p.theme.space[20]}px;
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: ${p => p.theme.space[12]}px;
+  }
+
+  @media (min-width: ${p => p.theme.screens.desktop}) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: ${p => p.theme.space[12]}px;
+  }
 `;
 
 export const EventListItem = styled.li`
@@ -14,11 +25,19 @@ export const EventListItem = styled.li`
 
   &:not(:last-child) {
     margin-bottom: ${p => p.theme.space[12]}px;
+
+    @media (min-width: ${p => p.theme.screens.tablet}) {
+      margin-bottom: ${p => p.theme.space[0]}px;
+    }
   }
 
   &:hover {
     & .infoThumb {
       transform: translateY(-104px);
+
+      @media (min-width: ${p => p.theme.screens.tablet}) {
+        transform: translateY(-96px);
+      }
     }
   }
 `;
@@ -68,6 +87,16 @@ export const CardImg = styled.img`
   width: 272px;
   height: 336px;
   background-size: cover;
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    width: 332px;
+    height: 336px;
+    background-size: contain;
+  }
+
+  @media (min-width: ${p => p.theme.screens.desktop}) {
+    width: 302px;
+  }
 `;
 
 export const InfoThumb = styled.div`

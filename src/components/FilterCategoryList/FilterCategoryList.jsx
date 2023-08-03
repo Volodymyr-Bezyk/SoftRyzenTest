@@ -7,6 +7,7 @@ import {
   FilterButton,
   FilterTextWrap,
   FilterText,
+  FilterTextMobile,
   FilterList,
   FilterListItem,
   FilterListItemButton,
@@ -23,9 +24,10 @@ const FilterByCaregory = () => {
         type="button"
         onClick={() => setShowFilterMenu(!showFilterMenu)}
       >
+        <FilterText>Business</FilterText>
         <LuFilter size={24} />
         <FilterTextWrap $filterMenu={showFilterMenu}>
-          <FilterText>Category</FilterText>
+          <FilterTextMobile>Category</FilterTextMobile>
         </FilterTextWrap>
       </FilterButton>
 

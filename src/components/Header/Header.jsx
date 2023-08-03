@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MdExpandMore } from 'react-icons/md';
 
 import { languagesOptions } from 'constants/languagesOptions';
+
 import {
   HeaderStyled,
   LogoText,
@@ -20,6 +21,7 @@ const Header = () => {
   return (
     <HeaderStyled>
       <LogoText>Event Planner</LogoText>
+
       <LanguageBlock>
         <LanguageButton
           $langList={showLanguages}

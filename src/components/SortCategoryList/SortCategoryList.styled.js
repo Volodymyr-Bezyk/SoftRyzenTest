@@ -18,6 +18,11 @@ export const SortButton = styled.button`
   border-radius: ${p => p.theme.radii.button};
   box-shadow: ${p => p.theme.shadows.button};
 
+  span {
+    color: ${p =>
+      p.$showSortMenu ? p.theme.colors.accent : p.theme.colors.buttonTextColor};
+  }
+
   svg {
     color: ${p =>
       p.$showSortMenu ? p.theme.colors.accent : p.theme.colors.buttonTextColor};
@@ -25,6 +30,11 @@ export const SortButton = styled.button`
     transition: transform 250ms ease-in-out 100ms, opacity 250ms ease-in-out,
       color 250ms ease-in-out;
     z-index: ${p => (p.$showSortMenu ? 2 : 0)};
+
+    @media (min-width: ${p => p.theme.screens.tablet}) {
+      transform: translate(0);
+      transition: color 250ms ease-in-out;
+    }
   }
 
   &:hover,
@@ -32,6 +42,14 @@ export const SortButton = styled.button`
     svg {
       color: ${p => p.theme.colors.accent};
     }
+    span {
+      color: ${p => p.theme.colors.accent};
+    }
+  }
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    width: 129px;
+    justify-content: flex-end;
   }
 `;
 
@@ -57,14 +75,41 @@ export const SortTextWrap = styled.span`
     p.$showSortMenu ? 'translateX(-114px)' : 'translateX(-80px)'};
   pointer-events: ${p => (p.$showSortMenu ? 'all' : 'none')};
   transition: transform 250ms ease-in-out 100ms, opacity 200ms ease-in-out 100ms;
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    width: 129px;
+    transform: translate(0);
+    pointer-events: all;
+    transition: transform 250ms ease-in-out, opacity 200ms ease-in-out;
+  }
 `;
 
 export const SortText = styled.span`
-  color: ${p => p.theme.colors.accent};
+  display: none;
+  margin-right: ${p => p.theme.space[8]}px;
+
   font-family: ${p => p.theme.fontFamily.primary};
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.medium};
   line-height: ${p => p.theme.lineHeights.normal};
+
+  z-index: 1;
+  transition: color 250ms ease-in-out;
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    display: block;
+  }
+`;
+
+export const SortTextMobile = styled.span`
+  font-family: ${p => p.theme.fontFamily.primary};
+  font-size: ${p => p.theme.fontSizes[4]}px;
+  font-weight: ${p => p.theme.fontWeights.medium};
+  line-height: ${p => p.theme.lineHeights.normal};
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    display: none;
+  }
 `;
 
 export const SortList = styled.ul`
@@ -86,6 +131,13 @@ export const SortList = styled.ul`
   transform: ${p => (p.$showSortMenu ? 'translateY(0)' : 'translateY(-30%)')};
   pointer-events: ${p => (p.$showSortMenu ? 'all' : 'none')};
   transition: transform 250ms ease-in-out 250ms, opacity 200ms ease-in-out 100ms;
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    top: 56px;
+    left: 0;
+    width: 129px;
+    transform: translate(0);
+  }
 `;
 
 export const SortListItem = styled.li`

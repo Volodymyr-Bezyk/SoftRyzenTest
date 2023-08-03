@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const SearchLabel = styled.label`
+  display: block;
+  position: relative;
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    position: absolute;
+    top: 26px;
+    right: 93px;
+  }
+`;
+
 export const SearchInput = styled.input`
   width: 272px;
   height: 48px;
@@ -24,21 +35,24 @@ export const SearchInput = styled.input`
     font-weight: ${p => p.theme.fontWeights.light};
     line-height: ${p => p.theme.lineHeights.max};
   }
+
+  @media (min-width: ${p => p.theme.screens.tablet}) {
+    width: 368px;
+  }
+
+  @media (min-width: ${p => p.theme.screens.desktop}) {
+    width: 410px;
+  }
 `;
 
-export const SearchLabel = styled.label`
-  display: block;
-  position: relative;
-`;
-
-export const SearchIcon = styled.span`
+export const SearchIcon = styled.button`
   position: absolute;
   top: 12px;
   left: 12px;
 `;
 
-export const CloseIcon = styled.span`
-  display: none;
+export const CloseIcon = styled.button`
+  display: block;
   position: absolute;
   top: 12px;
   right: 12px;
