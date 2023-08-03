@@ -1,6 +1,12 @@
+import { useParams, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 import { IoIosArrowRoundBack } from 'react-icons/io';
+import { getOneEventById } from 'utils/getOneEventById';
+import axios from 'axios';
+
 import {
-  BackButton,
+  BackLink,
   BackButtonText,
   EventCardWrap,
   EventTitle,
@@ -21,28 +27,54 @@ import {
 import defaultPhoto from '../../assets/defaultWide.jpg';
 
 const Event = () => {
+  const { eventId } = useParams();
+  const [event, setEvent] = useState({});
+  const locationlink = useLocation();
+  const backLinkHref = locationlink.state?.from ?? '/';
+
+  useEffect(() => {
+    (async function () {
+      const data = await getOneEventById(eventId);
+      setEvent(data.data);
+    })();
+    return () => {};
+  }, [eventId]);
+
+  const {
+    title,
+    description,
+    date,
+    time,
+    location,
+    category,
+    picture = defaultPhoto,
+    priority,
+  } = event;
+
   return (
     <div>
-      <BackButton type="button">
+      <BackLink to={backLinkHref} type="button">
         <IoIosArrowRoundBack size={24} />
         <BackButtonText>Back</BackButtonText>
-      </BackButton>
+      </BackLink>
 
       <EventCardWrap>
         <div>
-          <EventTitle>Gallery Opening</EventTitle>
+          <EventTitle>{title}</EventTitle>
           <EventCard>
-            <EventCardImg src={defaultPhoto} alt="" />
+            <EventCardImg
+              src={picture ? picture : defaultPhoto}
+              alt={category}
+            />
             <DetailsThumb>
-              <EventCardText>
-                Discover an enchanting evening celebrating the world of art at
-                our exclusive gallery opening.
-              </EventCardText>
+              <EventCardText>{description}</EventCardText>
               <EventCardPriorityThumb>
-                <CardCategory>Art</CardCategory>
-                <CardPriority $priority={'High'}>High</CardPriority>
-                <CardLocation>Kyiv</CardLocation>
-                <CardDate>12.07 at 12:00 am</CardDate>
+                <CardCategory>{category}</CardCategory>
+                <CardPriority $priority={'High'}>{priority}</CardPriority>
+                <CardLocation>{location}</CardLocation>
+                <CardDate>
+                  {date} at {time}
+                </CardDate>
               </EventCardPriorityThumb>
 
               <ButtonsThumb>

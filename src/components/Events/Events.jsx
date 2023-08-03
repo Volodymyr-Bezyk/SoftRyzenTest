@@ -1,5 +1,8 @@
-import EllipsisText from 'react-ellipsis-text';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import EllipsisText from 'react-ellipsis-text';
+
 import { getEvents } from 'utils/getEvents';
 import defaultPhoto from '../../assets/default.jpg';
 
@@ -25,6 +28,7 @@ import {
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const linkLocation = useLocation();
 
   useEffect(() => {
     (async function getEventsList() {
@@ -50,13 +54,16 @@ const Events = () => {
           priority,
         }) => (
           <EventListItem key={id}>
-            <EventListCard>
+            <EventListCard $state={{ from: linkLocation }}>
               <CardThumb>
                 <PriorityWrapper>
                   <CardCategory>{category}</CardCategory>
                   <CardPriority $priority={priority}>{priority}</CardPriority>
                 </PriorityWrapper>
-                <CardImg src={picture ? picture : defaultPhoto} alt={title} />
+                <CardImg
+                  src={picture ? picture : defaultPhoto}
+                  alt={category}
+                />
               </CardThumb>
 
               <InfoThumb className="infoThumb">
