@@ -46,11 +46,13 @@ const theme = {
     card: '12px',
     primary: '8px',
     secondary: '4px',
+    form: '8px',
   },
 
   borders: {
     main: '1px solid #7b61ff',
     button: ' 1px solid var(--accent, #7B61FF);',
+    input: '1px solid  #aca7c3',
   },
 
   shadows: {
@@ -58,6 +60,7 @@ const theme = {
     inputShadow: '2px 4px 9px 0px rgba(166, 141, 174, 0.28)',
     button: '2px 4px 9px 0px rgba(166, 141, 174, 0.28);',
     card: '2px 4px 9px 0px rgba(166, 141, 174, 0.28);',
+    form: '2px 4px 9px 0px rgba(166, 141, 174, 0.28)',
   },
 
   screens: {

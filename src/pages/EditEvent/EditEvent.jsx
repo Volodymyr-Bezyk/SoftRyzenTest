@@ -1,4 +1,12 @@
+import BackLink from 'components/BackLink';
+import PageContentWrapperWithTitle from 'components/PageContentWrapperWithTitle';
+
 const EditEvent = () => {
-  return <div>Edit page</div>;
+  return (
+    <>
+      <BackLink />
+      <PageContentWrapperWithTitle title="Edit event"></PageContentWrapperWithTitle>
+    </>
+  );
 };
 export default EditEvent;

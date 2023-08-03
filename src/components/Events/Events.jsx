@@ -54,7 +54,7 @@ const Events = () => {
           priority,
         }) => (
           <EventListItem key={id}>
-            <EventListCard $state={{ from: linkLocation }}>
+            <EventListCard>
               <CardThumb>
                 <PriorityWrapper>
                   <CardCategory>{category}</CardCategory>
@@ -81,7 +81,10 @@ const Events = () => {
                     <EllipsisText text={description} length={100} />
                   </CardDescription>
                   <CardLinkWrap>
-                    <CardMoreInfoLink to={`event/${id}`}>
+                    <CardMoreInfoLink
+                      state={{ from: linkLocation }}
+                      to={`event/${id}`}
+                    >
                       More info
                     </CardMoreInfoLink>
                   </CardLinkWrap>

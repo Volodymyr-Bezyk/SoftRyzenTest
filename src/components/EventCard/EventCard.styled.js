@@ -1,29 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const EventCardWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const EventTitle = styled.h2`
-  margin-top: ${p => p.theme.space[12]}px;
-
-  color: ${p => p.theme.colors.buttonTextColor};
-  font-family: ${p => p.theme.fontFamily.primary};
-  font-size: ${p => p.theme.fontSizes[6]}px;
-  font-weight: ${p => p.theme.fontWeights.semiBold};
-  line-height: normal;
-
-  @media (min-width: ${p => p.theme.screens.tablet}) {
-    font-size: ${p => p.theme.fontSizes[7]}px;
-  }
-  @media (min-width: ${p => p.theme.screens.desktop}) {
-    margin-top: 17px;
-  }
-`;
-
 export const EventCardThumb = styled.div`
   margin-top: ${p => p.theme.space[12]}px;
 
@@ -70,6 +47,7 @@ export const DetailsThumb = styled.div`
 `;
 
 export const EventCardText = styled.p`
+  margin-bottom: ${p => p.theme.space[12]}px;
   color: ${p => p.theme.colors.text};
   font-family: ${p => p.theme.fontFamily.primary};
   font-size: ${p => p.theme.fontSizes[3]}px;
@@ -81,10 +59,12 @@ export const EventCardPriorityThumb = styled.div`
   margin-top: ${p => p.theme.space[12]}px;
   display: flex;
   flex-wrap: wrap;
+
+  margin: -${p => p.theme.space[3]}px;
 `;
 
 export const CardCategory = styled.span`
-  margin-right: ${p => p.theme.space[6]}px;
+  margin: ${p => p.theme.space[3]}px;
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[6]}px;
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.button};
@@ -100,7 +80,7 @@ export const CardCategory = styled.span`
 `;
 
 export const CardPriority = styled.span`
-  margin-right: ${p => p.theme.space[6]}px;
+  margin: ${p => p.theme.space[3]}px;
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[6]}px;
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.button};
@@ -120,6 +100,7 @@ export const CardPriority = styled.span`
 `;
 
 export const CardLocation = styled.span`
+  margin: ${p => p.theme.space[3]}px;
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[6]}px;
 
   color: ${p => p.theme.colors.accent};
@@ -130,14 +111,10 @@ export const CardLocation = styled.span`
 
   border-radius: ${p => p.theme.radii.button};
   box-shadow: ${p => p.theme.shadows.card};
-
-  @media (min-width: ${p => p.theme.screens.tablet}) {
-    margin-right: ${p => p.theme.space[6]}px;
-  }
 `;
 
 export const CardDate = styled.span`
-  margin-top: ${p => p.theme.space[6]}px;
+  margin: ${p => p.theme.space[3]}px;
   padding: ${p => p.theme.space[3]}px ${p => p.theme.space[6]}px;
 
   color: ${p => p.theme.colors.accent};
@@ -148,10 +125,6 @@ export const CardDate = styled.span`
 
   border-radius: ${p => p.theme.radii.button};
   box-shadow: ${p => p.theme.shadows.card};
-
-  @media (min-width: ${p => p.theme.screens.tablet}) {
-    margin-top: ${p => p.theme.space[0]}px;
-  }
 `;
 
 export const ButtonsThumb = styled.div`
