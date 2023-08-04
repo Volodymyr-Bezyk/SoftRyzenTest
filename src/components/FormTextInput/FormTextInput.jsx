@@ -8,13 +8,15 @@ import {
   ValidationErrorText,
 } from './FormTextInput.styled';
 
-const FormTextInput = ({ children, text, fieldName, register }) => {
+const FormTextInput = props => {
+  const { children, register, text, fieldName } = props;
+
   return (
     <FormLabel>
       <FormLabelText>{text}</FormLabelText>
       <FormLabelInput
         type="text"
-        {...register({ fieldName }, { required: true })}
+        // {...register(`${fieldName}`, { required: true })}
       />
       <ClearFormInputButton type="button">
         <IoIosClose size={24} />

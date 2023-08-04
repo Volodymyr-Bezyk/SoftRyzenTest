@@ -1,119 +1,87 @@
+import { useState, useEffect } from 'react';
 import moment from 'moment';
-import { useState } from 'react';
+import { MdExpandMore } from 'react-icons/md';
+import FormTextInput from 'components/FormTextInput/FormTextInput';
+
 import {
+  FormLabel,
+  FormLabelText,
   StyledDatetime,
   CalendarWrap,
   CalendarButtons,
   CalendarButtonCancel,
   CalendarButtonChoose,
+  CalendarMoreButton,
 } from './Calendar.styled';
 
 const Calendar = () => {
-  const [closeCalendar, setCloseCalendar] = useState(true);
-  const [date, setDate] = useState('');
+  const [calendarClosed, setCalendarClosed] = useState(true);
+  const [selectedDate, setSelectedDate] = useState('');
 
   const yesterday = moment().subtract(1, 'day');
   function valid(current) {
     return current.isAfter(yesterday);
   }
 
-  const toggleCalendar = () => setCloseCalendar(!closeCalendar);
+  const toggleCalendar = () => {
+    setCalendarClosed(!calendarClosed);
+  };
 
   const chooseDate = () => {
-    setCloseCalendar(true);
-    toggleCalendar();
-    console.log('gagaga', closeCalendar, date);
+    setCalendarClosed(true);
   };
   const cancelDate = () => {
-    setDate('');
-    setCloseCalendar(true);
-    console.log('hahah', closeCalendar, date);
+    setCalendarClosed(true);
+    setSelectedDate(null);
   };
 
-  return (
-    <CalendarWrap onClick={() => setCloseCalendar(false)}>
-      <StyledDatetime
-        isValidDate={valid}
-        timeFormat={false}
-        dateFormat="DD.MM.YYYY"
-        // input={true}
-        // closeOnSelect={false}
-        open={!closeCalendar}
-        // value={date}
-        inputProps={{
-          placeholder: !closeCalendar ? 'Select date' : 'Input',
-          //   required: true,
-        }}
-        onChange={value => setDate(value)}
-      />
+  //   console.log('selectedDate', selectedDate);
 
-      {!closeCalendar && (
-        <CalendarButtons>
-          <CalendarButtonCancel
-            onClick={() => {
-              console.log('closeCalendar', closeCalendar);
-              setCloseCalendar(true);
-            }}
-            type="button"
-          >
-            Cancel
-          </CalendarButtonCancel>
-          <CalendarButtonChoose
-            onClick={() => {
-              console.log('closeCalendar', closeCalendar);
-              setCloseCalendar(true);
-            }}
-            type="button"
-          >
-            Choose date
-          </CalendarButtonChoose>
-        </CalendarButtons>
-      )}
-    </CalendarWrap>
+  return (
+    <FormLabel>
+      <FormLabelText>Select date</FormLabelText>
+      <CalendarWrap>
+        <StyledDatetime
+          isValidDate={valid}
+          timeFormat={false}
+          dateFormat="DD.MM.YYYY"
+          input={true}
+          closeOnSelect={false}
+          open={!calendarClosed}
+          inputProps={{
+            placeholder: !calendarClosed ? 'Select date' : 'Input',
+            disabled: true,
+            required: true,
+          }}
+          value={selectedDate}
+          onChange={date => {
+            setSelectedDate(date);
+          }}
+          renderInput={props => <FormTextInput />}
+        />
+
+        {!calendarClosed && (
+          <CalendarButtons>
+            <CalendarButtonCancel
+              onClick={() => {
+                cancelDate();
+              }}
+              type="button"
+            >
+              Cancel
+            </CalendarButtonCancel>
+            <CalendarButtonChoose onClick={() => chooseDate()} type="button">
+              Choose date
+            </CalendarButtonChoose>
+          </CalendarButtons>
+        )}
+      </CalendarWrap>
+
+      <CalendarMoreButton type="button" onClick={() => toggleCalendar()}>
+        <MdExpandMore size={24} />
+      </CalendarMoreButton>
+    </FormLabel>
   );
 };
-
-// import DatePicker from 'react-datepicker';
-// import 'react-datepicker/dist/react-datepicker.css';
-
-// const Calendar = () => {
-//   const [selectedDate, setSelectedDate] = useState(null);
-//   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-
-//   const handleChoose = () => {
-//     // Виконати дії після вибору дати
-//     console.log('Ви вибрали дату:', selectedDate);
-//     setIsCalendarOpen(false); // Закрити календар після вибору
-//   };
-
-//   const handleCancel = () => {
-//     // Виконати дії при скасуванні вибору
-//     setSelectedDate(null);
-//     setIsCalendarOpen(false); // Закрити календар при скасуванні
-//   };
-
-//   return (
-//     <div className="calendar-container">
-//       <button className="action-button" onClick={() => setIsCalendarOpen(true)}>
-//         Open Calendar
-//       </button>
-//       {isCalendarOpen && (
-//         <div className="calendar-content">
-//           <DatePicker
-//             selected={selectedDate}
-//             onChange={date => setSelectedDate(date)}
-//             dateFormat="dd.MM.yyyy"
-//           />
-//           <button className="action-button" onClick={handleChoose}>
-//             Choose
-//           </button>
-//           <button className="action-button" onClick={handleCancel}>
-//             Cancel
-//           </button>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
 
 export default Calendar;
