@@ -49,6 +49,13 @@ const selectStyles = {
     ...provided,
     display: 'none',
   }),
+  placeholder: (provided, state) => ({
+    ...provided,
+    color: state.isFocused ? '#7B61FF' : '#ACA7C3',
+    fontSize: '16px',
+    fontWeight: 400,
+    lineHeight: 1.5,
+  }),
 };
 
 const FormSelect = props => {
@@ -58,11 +65,7 @@ const FormSelect = props => {
     <FormLabel>
       <FormLabelText>Category</FormLabelText>
 
-      <Select
-        options={options}
-        styles={selectStyles}
-        placeholder="Choose category"
-      />
+      <Select options={options} styles={selectStyles} placeholder="Input" />
       <ValidationErrorText>invalid input</ValidationErrorText>
     </FormLabel>
   );

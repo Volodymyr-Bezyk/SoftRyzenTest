@@ -8,6 +8,19 @@ export const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
 
+  svg {
+    color: ${p => p.theme.colors.sortListItemColor};
+
+    transition: color 250ms ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      color: ${p => p.theme.colors.accent};
+    }
+  }
+
   @media (min-width: ${p => p.theme.screens.tablet}) {
     width: 308px;
   }

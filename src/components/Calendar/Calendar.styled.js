@@ -60,11 +60,11 @@ export const CalendarMoreButton = styled.button`
 
 export const CalendarButtons = styled.div`
   position: absolute;
-  top: 360px;
+  top: 396px;
   left: 0;
   /* width: 240px; */
   width: 100%;
-  z-index: 99999 !important;
+  z-index: 9999999 !important;
 
   display: flex;
   justify-content: space-between;
@@ -175,18 +175,25 @@ export const StyledDatetime = styled(Datetime)`
     display: none;
     position: absolute;
 
-    width: 100%;
+    width: 240px;
     min-width: 240px;
     height: 348px;
     padding: 20px;
 
-    margin-top: 8px;
+    /* margin-top: 8px; */
     z-index: 99999 !important;
 
     border-top-right-radius: 11px;
     border-top-left-radius: 11px;
     background: #ffffff;
     box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.07);
+
+    @media (min-width: ${p => p.theme.screens.tablet}) {
+      width: 308px;
+    }
+    @media (min-width: ${p => p.theme.screens.desktop}) {
+      width: 372px;
+    }
   }
 
   .rdtPicker th {

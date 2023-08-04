@@ -9,19 +9,34 @@ import {
 } from './FormTextInput.styled';
 
 const FormTextInput = props => {
-  const { children, register, text, fieldName } = props;
+  const {
+    children,
+    register,
+    text,
+    fieldName,
+    clear = true,
+    value = '',
+    showInput = true,
+    ...other
+  } = props;
 
   return (
     <FormLabel>
       <FormLabelText>{text}</FormLabelText>
-      <FormLabelInput
-        type="text"
-        // {...register(`${fieldName}`, { required: true })}
-      />
-      <ClearFormInputButton type="button">
-        <IoIosClose size={24} />
-      </ClearFormInputButton>
-      <ValidationErrorText>invalid input </ValidationErrorText>
+      {showInput && (
+        <FormLabelInput
+          {...other}
+          type="text"
+          {...register(`${fieldName}`, { required: true })}
+          placeholder="Input"
+        />
+      )}
+      {clear && (
+        <ClearFormInputButton type="button">
+          <IoIosClose size={24} />
+        </ClearFormInputButton>
+      )}
+      {clear && <ValidationErrorText>invalid input </ValidationErrorText>}
       {children}
     </FormLabel>
   );

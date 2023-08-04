@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import moment from 'moment';
 import { MdExpandMore } from 'react-icons/md';
 import FormTextInput from 'components/FormTextInput/FormTextInput';
+import { dateFormatter } from 'utils/dateFormatter';
 
 import {
   FormLabel,
@@ -32,55 +33,50 @@ const Calendar = () => {
   };
   const cancelDate = () => {
     setCalendarClosed(true);
-    setSelectedDate(null);
+    setSelectedDate('');
   };
 
-  //   console.log('selectedDate', selectedDate);
+  const CalendarContent = props => (
+    <FormTextInput text="Select date" clear={false} showInput={false}>
+      <input
+        required
+        disabled
+        value={selectedDate}
+        placeholder={!calendarClosed ? 'Select date' : 'Input'}
+      />
 
-  return (
-    <FormLabel>
-      <FormLabelText>Select date</FormLabelText>
-      <CalendarWrap>
-        <StyledDatetime
-          isValidDate={valid}
-          timeFormat={false}
-          dateFormat="DD.MM.YYYY"
-          input={true}
-          closeOnSelect={false}
-          open={!calendarClosed}
-          inputProps={{
-            placeholder: !calendarClosed ? 'Select date' : 'Input',
-            disabled: true,
-            required: true,
-          }}
-          value={selectedDate}
-          onChange={date => {
-            setSelectedDate(date);
-          }}
-          renderInput={props => <FormTextInput />}
-        />
-
-        {!calendarClosed && (
-          <CalendarButtons>
-            <CalendarButtonCancel
-              onClick={() => {
-                cancelDate();
-              }}
-              type="button"
-            >
-              Cancel
-            </CalendarButtonCancel>
-            <CalendarButtonChoose onClick={() => chooseDate()} type="button">
-              Choose date
-            </CalendarButtonChoose>
-          </CalendarButtons>
-        )}
-      </CalendarWrap>
+      {!calendarClosed && (
+        <CalendarButtons>
+          <CalendarButtonCancel
+            onClick={() => {
+              cancelDate();
+            }}
+            type="button"
+          >
+            Cancel
+          </CalendarButtonCancel>
+          <CalendarButtonChoose onClick={() => chooseDate()} type="button">
+            Choose date
+          </CalendarButtonChoose>
+        </CalendarButtons>
+      )}
 
       <CalendarMoreButton type="button" onClick={() => toggleCalendar()}>
         <MdExpandMore size={24} />
       </CalendarMoreButton>
-    </FormLabel>
+    </FormTextInput>
+  );
+
+  return (
+    <StyledDatetime
+      isValidDate={valid}
+      timeFormat={false}
+      dateFormat="DD.MM.YYYY"
+      input={true}
+      open={!calendarClosed}
+      onChange={date => setSelectedDate(dateFormatter(date))}
+      renderInput={props => <CalendarContent />}
+    />
   );
 };
 

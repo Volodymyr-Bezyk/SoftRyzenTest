@@ -16,6 +16,7 @@ const FormTextArea = props => {
       <FormLabelText>{text}</FormLabelText>
       <FormLabelTextArea
         {...register(`${fieldName}`, { required: true })}
+        placeholder="Input"
       ></FormLabelTextArea>
       <ClearFormInputButton type="button">
         <IoIosClose size={24} />
