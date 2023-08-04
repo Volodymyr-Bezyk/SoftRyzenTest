@@ -33,7 +33,7 @@ export const FormInnerDelimeter = styled.div`
   }
 `;
 
-export const Formlabel = styled.label`
+export const FormLabel = styled.label`
   position: relative;
   width: 240px;
 
@@ -80,6 +80,11 @@ export const FormLabelInput = styled.input`
   line-height: 1.5;
 
   transition: border-color 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: ${p => p.theme.colors.buttonHoverBg};
+  }
 `;
 
 export const FormLabelTextArea = styled.textarea`
@@ -101,25 +106,13 @@ export const FormLabelTextArea = styled.textarea`
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.regular};
   line-height: 1.5;
-`;
 
-export const FormLabelSelect = styled.select`
-  width: 100%;
-  height: 56px;
-
-  padding: ${p => p.theme.space[8]}px ${p => p.theme.space[18]}px
-    ${p => p.theme.space[8]}px ${p => p.theme.space[6]}px;
-  outline: none;
-
-  border: ${p => p.theme.borders.input};
-  border-radius: ${p => p.theme.radii.input};
   transition: border-color 250ms ease-in-out;
 
-  color: ${p => p.theme.colors.buttonTextColor};
-  font-family: ${p => p.theme.fontFamily.primary};
-  font-size: ${p => p.theme.fontSizes[4]}px;
-  font-weight: ${p => p.theme.fontWeights.regular};
-  line-height: 1.5;
+  &:hover,
+  &:focus {
+    border-color: ${p => p.theme.colors.buttonHoverBg};
+  }
 `;
 
 export const AddEventButton = styled.button`

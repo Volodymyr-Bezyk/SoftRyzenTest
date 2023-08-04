@@ -5,6 +5,7 @@ export const EventCardWrap = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: ${p => (p.$align === 'center' ? 'center' : 'normal')};
 
   @media (min-width: ${p => p.theme.screens.desktop}) {
     padding-top: 17px;

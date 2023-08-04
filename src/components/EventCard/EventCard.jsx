@@ -54,7 +54,7 @@ const EventCard = () => {
   };
 
   return (
-    <PageContentWrapperWithTitle title={title}>
+    <PageContentWrapperWithTitle title={title} position={'center'}>
       <EventCardThumb>
         <EventCardImg src={picture ? picture : defaultPhoto} alt={category} />
         <DetailsThumb>

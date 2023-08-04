@@ -6,15 +6,17 @@ import PageContentWrapperWithTitle from 'components/PageContentWrapperWithTitle'
 import {
   FormWrap,
   FormInnerDelimeter,
-  Formlabel,
+  FormLabel,
   FormLabelText,
   FormLabelInput,
   FormLabelTextArea,
-  FormLabelSelect,
   AddEventButton,
   ClearFormInputButton,
   ValidationErrorText,
 } from './NewEvent.styled';
+
+import { filterOptions } from 'constants/filterListOptions';
+import { priorityOptions } from 'constants/priorityOptions';
 
 const NewEvent = () => {
   const {
@@ -26,11 +28,50 @@ const NewEvent = () => {
 
   const onSubmit = data => console.log(data);
 
-  const options = [
-    { value: 'High', label: 'High' },
-    { value: 'Medium', label: 'Medium' },
-    { value: 'Low', label: 'Low' },
-  ];
+  const customStyles = {
+    container: (provided, state) => ({
+      ...provided,
+      outline: 'none',
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      fontSize: 16,
+      color: state.isSelected ? 'white' : '#3F3F3F',
+      backgroundColor: state.isSelected ? '#7B61FF' : 'white',
+    }),
+    control: (provided, state) => ({
+      ...provided,
+      width: '100%',
+      height: '56px',
+      display: 'flex',
+      alignContent: 'center',
+      padding: '16px 12px',
+      fontSize: 16,
+      border: state.isFocused ? '1px solid #6243FF' : '1px solid #ACA7C3',
+      borderRadius: '8px',
+      transition: 'color 250ms ease-in-out, border-color 250ms ease-in-out',
+      boxShadow: 'none',
+
+      '&:hover, &:focus ': {
+        borderColor: '#6243FF',
+      },
+    }),
+    dropdownIndicator: (provided, state) => ({
+      ...provided,
+      color: state.isFocused ? '#6243FF' : '#ACA7C3',
+      '&:hover, &:focus ': {
+        color: '#6243FF',
+      },
+    }),
+    indicatorsContainer: provided => ({
+      ...provided,
+      cursor: 'pointer',
+    }),
+    indicatorSeparator: provided => ({
+      ...provided,
+      display: 'none',
+    }),
+  };
 
   return (
     <>
@@ -39,7 +80,7 @@ const NewEvent = () => {
         <FormWrap>
           <form onSubmit={handleSubmit(onSubmit)}>
             <FormInnerDelimeter>
-              <Formlabel>
+              <FormLabel>
                 <FormLabelText>Title</FormLabelText>
                 <FormLabelInput
                   type="text"
@@ -49,9 +90,9 @@ const NewEvent = () => {
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
                 <ValidationErrorText>invalid input </ValidationErrorText>
-              </Formlabel>
+              </FormLabel>
 
-              <Formlabel>
+              <FormLabel>
                 <FormLabelText>Description</FormLabelText>
                 <FormLabelTextArea
                   {...register('description', { required: true })}
@@ -60,27 +101,27 @@ const NewEvent = () => {
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
                 <ValidationErrorText>invalid input</ValidationErrorText>
-              </Formlabel>
+              </FormLabel>
 
-              <Formlabel>
+              <FormLabel>
                 <FormLabelText>Select date</FormLabelText>
                 <FormLabelInput
                   type="date"
                   {...register('date', { required: true })}
                 />
                 <ValidationErrorText>invalid input</ValidationErrorText>
-              </Formlabel>
+              </FormLabel>
 
-              <Formlabel>
+              <FormLabel>
                 <FormLabelText>Select time</FormLabelText>
                 <FormLabelInput
                   type="time"
                   {...register('time', { required: true })}
                 />
                 <ValidationErrorText>invalid input</ValidationErrorText>
-              </Formlabel>
+              </FormLabel>
 
-              <Formlabel>
+              <FormLabel>
                 <FormLabelText>Location</FormLabelText>
                 <FormLabelInput
                   type="text"
@@ -90,20 +131,20 @@ const NewEvent = () => {
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
                 <ValidationErrorText>invalid input</ValidationErrorText>
-              </Formlabel>
+              </FormLabel>
 
-              <Formlabel>
+              <FormLabel>
                 <FormLabelText>Category</FormLabelText>
-                <Select options={options} />
-                {/* <FormLabelSelect {...register('category')}>
-                  <option value={'High'}>High</option>
-                  <option value={'Medium'}>Medium</option>
-                  <option value={'Low'}>Low</option>
-                </FormLabelSelect> */}
-                <ValidationErrorText>invalid input</ValidationErrorText>
-              </Formlabel>
 
-              <Formlabel>
+                <Select
+                  options={filterOptions}
+                  styles={customStyles}
+                  placeholder="Choose category"
+                />
+                <ValidationErrorText>invalid input</ValidationErrorText>
+              </FormLabel>
+
+              <FormLabel>
                 <FormLabelText>Add picture</FormLabelText>
                 <FormLabelInput
                   type="text"
@@ -113,17 +154,17 @@ const NewEvent = () => {
                   <IoIosClose size={24} />
                 </ClearFormInputButton>
                 <ValidationErrorText>invalid input</ValidationErrorText>
-              </Formlabel>
+              </FormLabel>
 
-              <Formlabel>
+              <FormLabel>
                 <FormLabelText>Priority</FormLabelText>
-                <FormLabelSelect {...register('priority')}>
-                  <option value={'Art'}>Art</option>
-                  <option value={'Business'}>Business</option>
-                  <option value={'Party'}>Party</option>
-                </FormLabelSelect>
+                <Select
+                  options={priorityOptions}
+                  styles={customStyles}
+                  placeholder="Choose priority"
+                />
                 <ValidationErrorText>invalid input</ValidationErrorText>
-              </Formlabel>
+              </FormLabel>
             </FormInnerDelimeter>
 
             <AddEventButton type="submit">Add event</AddEventButton>

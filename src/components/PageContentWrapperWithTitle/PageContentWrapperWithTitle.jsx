@@ -3,9 +3,9 @@ import {
   EventTitle,
 } from './PageContentWrapperWithTitle.styled';
 
-const PageContentWrapperWithTitle = ({ children, title }) => {
+const PageContentWrapperWithTitle = ({ children, title, position }) => {
   return (
-    <EventCardWrap>
+    <EventCardWrap $align={position}>
       <div>
         <EventTitle>{title}</EventTitle>
         {children}
