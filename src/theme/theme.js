@@ -47,6 +47,7 @@ const theme = {
     primary: '8px',
     secondary: '4px',
     form: '8px',
+    calendar: '11px',
   },
 
   borders: {

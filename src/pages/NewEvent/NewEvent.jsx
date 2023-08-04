@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
+
 import { IoIosClose } from 'react-icons/io';
 import BackLink from 'components/BackLink';
 import PageContentWrapperWithTitle from 'components/PageContentWrapperWithTitle';
@@ -13,10 +14,12 @@ import {
   AddEventButton,
   ClearFormInputButton,
   ValidationErrorText,
+  StyledCalendaer,
 } from './NewEvent.styled';
 
 import { filterOptions } from 'constants/filterListOptions';
 import { priorityOptions } from 'constants/priorityOptions';
+import Calendar from 'components/Calendar';
 
 const NewEvent = () => {
   const {
@@ -28,7 +31,7 @@ const NewEvent = () => {
 
   const onSubmit = data => console.log(data);
 
-  const customStyles = {
+  const selectStyles = {
     container: (provided, state) => ({
       ...provided,
       outline: 'none',
@@ -105,19 +108,13 @@ const NewEvent = () => {
 
               <FormLabel>
                 <FormLabelText>Select date</FormLabelText>
-                <FormLabelInput
-                  type="date"
-                  {...register('date', { required: true })}
-                />
+                <Calendar />
                 <ValidationErrorText>invalid input</ValidationErrorText>
               </FormLabel>
 
               <FormLabel>
                 <FormLabelText>Select time</FormLabelText>
-                <FormLabelInput
-                  type="time"
-                  {...register('time', { required: true })}
-                />
+
                 <ValidationErrorText>invalid input</ValidationErrorText>
               </FormLabel>
 
@@ -138,7 +135,7 @@ const NewEvent = () => {
 
                 <Select
                   options={filterOptions}
-                  styles={customStyles}
+                  styles={selectStyles}
                   placeholder="Choose category"
                 />
                 <ValidationErrorText>invalid input</ValidationErrorText>
@@ -160,7 +157,7 @@ const NewEvent = () => {
                 <FormLabelText>Priority</FormLabelText>
                 <Select
                   options={priorityOptions}
-                  styles={customStyles}
+                  styles={selectStyles}
                   placeholder="Choose priority"
                 />
                 <ValidationErrorText>invalid input</ValidationErrorText>
