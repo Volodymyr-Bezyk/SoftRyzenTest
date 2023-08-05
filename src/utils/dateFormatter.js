@@ -1,4 +1,4 @@
-export function dateFormatter(inputDate) {
+export function dateFormatter(inputDate, period) {
   const date = new Date(inputDate);
 
   const day = String(date.getDate()).padStart(2, '0');

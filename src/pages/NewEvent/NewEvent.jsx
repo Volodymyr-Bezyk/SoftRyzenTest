@@ -1,4 +1,5 @@
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import BackLink from 'components/BackLink';
@@ -18,12 +19,14 @@ import Clock from 'components/Clock';
 import { filterOptions } from 'constants/filterListOptions';
 import { priorityOptions } from 'constants/priorityOptions';
 import { validationSchema } from 'validationSchema/validationSchema';
+import { createEvent } from 'utils/createEvent';
 
 const NewEvent = () => {
+  const navigate = useNavigate();
   const {
     handleSubmit,
     control,
-
+    reset,
     formState: { errors },
   } = useForm({
     mode: 'onChange',
@@ -35,7 +38,11 @@ const NewEvent = () => {
     },
   });
 
-  const onSubmit = data => console.log(data);
+  const onSubmit = async data => {
+    await createEvent(data);
+    navigate('/', { replace: true });
+    reset({ ...data });
+  };
 
   return (
     <>
@@ -56,13 +63,6 @@ const NewEvent = () => {
                 )}
               />
 
-              {/* <FormTextInput
-                register={register}
-                text="Title"
-                fieldName="title"
-                error={errors?.title?.message}
-              /> */}
-
               <Controller
                 name="description"
                 control={control}
@@ -74,13 +74,6 @@ const NewEvent = () => {
                   />
                 )}
               />
-
-              {/* <FormTextArea
-                register={register}
-                text="Description"
-                fieldName="description"
-                error={errors?.description?.message}
-              /> */}
 
               <Controller
                 name="date"
@@ -110,13 +103,6 @@ const NewEvent = () => {
                 )}
               />
 
-              {/* <FormTextInput
-                register={register}
-                text="Location"
-                fieldName="location"
-                error={errors?.location?.message}
-              /> */}
-
               <Controller
                 name="category"
                 control={control}
@@ -141,13 +127,6 @@ const NewEvent = () => {
                   />
                 )}
               />
-              {/* 
-              <FormTextInput
-                register={register}
-                text="Add picture"
-                fieldName="picture"
-                error={errors?.picture?.message}
-              /> */}
 
               <Controller
                 name="priority"
