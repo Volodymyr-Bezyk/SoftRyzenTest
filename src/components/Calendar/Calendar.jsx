@@ -5,6 +5,8 @@ import FormTextInput from 'components/FormTextInput/FormTextInput';
 import { dateFormatter } from 'utils/dateFormatter';
 
 import {
+  ValidationErrorText,
+  CalendarInput,
   StyledDatetime,
   CalendarButtons,
   CalendarButtonCancel,
@@ -13,7 +15,7 @@ import {
 } from './Calendar.styled';
 
 const Calendar = props => {
-  const { field } = props;
+  const { field, error = '' } = props;
 
   const [calendarClosed, setCalendarClosed] = useState(true);
   const [selectedDate, setSelectedDate] = useState('');
@@ -25,7 +27,7 @@ const Calendar = props => {
 
   const onChange = date => {
     setSelectedDate(dateFormatter(date));
-    field?.onChange(date);
+    field?.onChange(dateFormatter(date));
   };
 
   const toggleCalendar = () => {
@@ -38,39 +40,50 @@ const Calendar = props => {
   const cancelDate = () => {
     setCalendarClosed(true);
     setSelectedDate('');
+    field?.onChange('');
   };
 
-  const CalendarContent = props => (
-    <FormTextInput text="Select date" clear={false} showInput={false}>
-      <input
-        required
-        disabled
-        value={selectedDate}
-        placeholder={!calendarClosed ? 'Select date' : 'Input'}
-      />
+  const CalendarContent = props => {
+    return (
+      <FormTextInput
+        text="Select date"
+        clear={false}
+        showInput={false}
+        error={error}
+      >
+        <CalendarInput
+          required
+          disabled
+          value={selectedDate}
+          placeholder={!calendarClosed ? 'Select date' : 'Input'}
+          $focus={!calendarClosed}
+        />
 
-      {!calendarClosed && (
-        <CalendarButtons>
-          <CalendarButtonCancel
-            onClick={() => {
-              cancelDate();
-            }}
-            type="button"
-          >
-            Cancel
-          </CalendarButtonCancel>
-          <CalendarButtonChoose onClick={() => chooseDate()} type="button">
-            Choose date
-          </CalendarButtonChoose>
-        </CalendarButtons>
-      )}
+        {!calendarClosed && (
+          <CalendarButtons>
+            <CalendarButtonCancel
+              onClick={() => {
+                cancelDate();
+              }}
+              type="button"
+            >
+              Cancel
+            </CalendarButtonCancel>
+            <CalendarButtonChoose onClick={() => chooseDate()} type="button">
+              Choose date
+            </CalendarButtonChoose>
+          </CalendarButtons>
+        )}
 
-      <CalendarMoreButton type="button" onClick={() => toggleCalendar()}>
-        {!calendarClosed && <MdExpandLess size={24} />}
-        {calendarClosed && <MdExpandMore size={24} />}
-      </CalendarMoreButton>
-    </FormTextInput>
-  );
+        <CalendarMoreButton type="button" onClick={() => toggleCalendar()}>
+          {!calendarClosed && <MdExpandLess size={24} />}
+          {calendarClosed && <MdExpandMore size={24} />}
+        </CalendarMoreButton>
+
+        {error && <ValidationErrorText>{error}</ValidationErrorText>}
+      </FormTextInput>
+    );
+  };
 
   return (
     <StyledDatetime
@@ -80,7 +93,7 @@ const Calendar = props => {
       input={true}
       open={!calendarClosed}
       onChange={onChange}
-      renderInput={props => <CalendarContent />}
+      renderInput={props => <CalendarContent {...props} />}
     />
   );
 };

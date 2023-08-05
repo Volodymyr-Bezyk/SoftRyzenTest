@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 
 import {
@@ -15,20 +16,27 @@ const FormTextInput = props => {
     text,
     fieldName,
     clear = true,
-    // value = '',
+    value = '',
     showInput = true,
+    error = '',
     ...other
   } = props;
 
+  const [fieldData, setFieldData] = useState(value);
+
+  console.log('register', register);
+
   return (
-    <FormLabel>
+    <FormLabel $error={error}>
       <FormLabelText>{text}</FormLabelText>
       {showInput && (
         <FormLabelInput
           {...other}
           type="text"
-          {...register(`${fieldName}`, { required: true })}
+          {...register(`${fieldName}`)}
           placeholder="Input"
+          value={fieldData}
+          onChange={e => setFieldData(e.target.value)}
         />
       )}
       {clear && (
@@ -36,7 +44,7 @@ const FormTextInput = props => {
           <IoIosClose size={24} />
         </ClearFormInputButton>
       )}
-      {clear && <ValidationErrorText>invalid input </ValidationErrorText>}
+      {error && <ValidationErrorText>{error}</ValidationErrorText>}
       {children}
     </FormLabel>
   );

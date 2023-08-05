@@ -8,22 +8,39 @@ export const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
 
-  svg {
-    color: ${p => p.theme.colors.sortListItemColor};
+  & input:placeholder-shown + button {
+    svg {
+      display: none;
+    }
+  }
 
+  svg {
+    color: ${p =>
+      p.$error
+        ? p.theme.colors.highPriority
+        : p.theme.colors.sortListItemColor};
+    transition: color 250ms ease-in-out;
+  }
+
+  input {
+    border: ${p => p.theme.borders.input};
+    border-color: ${p =>
+      p.$error
+        ? p.theme.colors.highPriority
+        : p.theme.colors.sortListItemColor};
     transition: color 250ms ease-in-out;
   }
 
   &:hover,
-  &:focus {
+  &:focus-within {
     svg {
-      color: ${p => p.theme.colors.accent};
+      color: ${p =>
+        p.$error ? p.theme.colors.highPriority : p => p.theme.colors.accent};
     }
-  }
-
-  & input:placeholder-shown + button {
-    svg {
-      display: none;
+    input,
+    input:focus {
+      border-color: ${p =>
+        p.$error ? p.theme.colors.highPriority : p => p.theme.colors.accent};
     }
   }
 
@@ -55,7 +72,6 @@ export const FormLabelInput = styled.input`
     ${p => p.theme.space[8]}px ${p => p.theme.space[6]}px;
   outline: none;
 
-  border: ${p => p.theme.borders.input};
   border-radius: ${p => p.theme.radii.input};
   caret-color: ${p => p.theme.colors.buttonTextColor};
 
@@ -66,22 +82,12 @@ export const FormLabelInput = styled.input`
   line-height: 1.5;
 
   transition: border-color 250ms ease-in-out;
-
-  &:hover,
-  &:focus {
-    border-color: ${p => p.theme.colors.buttonHoverBg};
-  }
 `;
 
 export const ClearFormInputButton = styled.button`
   position: absolute;
   top: 40px;
   right: 12px;
-
-  svg {
-    color: ${p => p.theme.colors.accent};
-    transition: color 250ms ease-in-out;
-  }
 `;
 
 export const ValidationErrorText = styled.span`

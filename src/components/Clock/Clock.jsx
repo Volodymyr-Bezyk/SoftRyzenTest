@@ -3,10 +3,14 @@ import { useState } from 'react';
 import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 import FormTextInput from 'components/FormTextInput';
 
-import { ClockWrap, ClockMoreButton } from './Clock.styled';
+import {
+  ClockWrap,
+  ClockMoreButton,
+  ValidationErrorText,
+} from './Clock.styled';
 
 const Clock = props => {
-  const { field } = props;
+  const { field, error = '' } = props;
   const [openClock, setOpenClock] = useState(false);
   const [time, setTime] = useState(false);
 
@@ -22,7 +26,7 @@ const Clock = props => {
       showInput={false}
       clear={false}
     >
-      <ClockWrap wrap $open={openClock}>
+      <ClockWrap wrap $open={openClock} $error={error} $focus={openClock}>
         <TimePicker
           open={openClock}
           onSelect={onSelectTime}
@@ -43,6 +47,7 @@ const Clock = props => {
         {openClock && <MdExpandLess size={24} />}
         {!openClock && <MdExpandMore size={24} />}
       </ClockMoreButton>
+      {error && <ValidationErrorText>{error}</ValidationErrorText>}
     </FormTextInput>
   );
 };

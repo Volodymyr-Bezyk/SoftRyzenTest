@@ -9,10 +9,10 @@ import {
 } from './FormTextArea.styled';
 
 const FormTextArea = props => {
-  const { register, text, fieldName } = props;
+  const { register, text, fieldName, error = '' } = props;
 
   return (
-    <FormLabel>
+    <FormLabel $error={error}>
       <FormLabelText>{text}</FormLabelText>
       <FormLabelTextArea
         {...register(`${fieldName}`, { required: true })}
@@ -21,7 +21,7 @@ const FormTextArea = props => {
       <ClearFormInputButton type="button">
         <IoIosClose size={24} />
       </ClearFormInputButton>
-      <ValidationErrorText>invalid input</ValidationErrorText>
+      {error && <ValidationErrorText>{error}</ValidationErrorText>}
     </FormLabel>
   );
 };

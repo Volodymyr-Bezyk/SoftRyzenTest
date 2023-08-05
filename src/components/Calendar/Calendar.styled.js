@@ -2,6 +2,18 @@ import styled from 'styled-components';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 
+export const ValidationErrorText = styled.span`
+  position: absolute;
+  right: 19px;
+  bottom: -20px;
+
+  color: ${p => p.theme.colors.highPriority};
+  font-family: ${p => p.theme.fontFamily.primary};
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.regular};
+  line-height: 1.33;
+`;
+
 export const FormLabel = styled.label`
   position: relative;
   width: 240px;
@@ -10,19 +22,32 @@ export const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
 
-  &:hover,
-  &:focus {
-    svg {
-      color: ${p => p.theme.colors.accent};
-    }
-  }
-
   @media (min-width: ${p => p.theme.screens.tablet}) {
     width: 308px;
   }
 
   @media (min-width: ${p => p.theme.screens.desktop}) {
     width: 372px;
+  }
+`;
+
+export const CalendarInput = styled.input`
+  border-color: ${p => p.$focus && p.theme.colors.accent} !important;
+`;
+
+export const CalendarMoreButton = styled.button`
+  position: absolute;
+  top: 24px;
+  right: 12px;
+  width: 130px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  svg {
+    display: block !important;
   }
 `;
 
@@ -40,30 +65,10 @@ export const FormLabelText = styled.span`
   letter-spacing: 0.4px;
 `;
 
-export const CalendarMoreButton = styled.button`
-  position: absolute;
-  top: 24px;
-  right: 12px;
-  width: 130px;
-  height: 56px;
-
-  display: flex;
-  align-items: center;
-  justify-content: end;
-
-  svg {
-    display: block !important;
-    color: ${p => p.theme.colors.sortListItemColor};
-
-    transition: color 250ms ease-in-out;
-  }
-`;
-
 export const CalendarButtons = styled.div`
   position: absolute;
-  top: 396px;
+  top: 384px;
   left: 0;
-  /* width: 240px; */
   width: 100%;
   z-index: 9999999 !important;
 
@@ -140,7 +145,7 @@ export const StyledDatetime = styled(Datetime)`
     padding: ${p => p.theme.space[8]}px ${p => p.theme.space[18]}px
       ${p => p.theme.space[8]}px ${p => p.theme.space[6]}px;
     outline: none;
-    border: ${p => p.theme.borders.input};
+    /* border: ${p => p.theme.borders.input}; */
     border-radius: ${p => p.theme.radii.input};
     caret-color: ${p => p.theme.colors.buttonTextColor};
 
@@ -162,10 +167,10 @@ export const StyledDatetime = styled(Datetime)`
       opacity: ${p => p.open && 1};
     }
 
-    &:hover,
+    /* &:hover,
     &:focus {
       border-color: ${p => p.theme.colors.buttonHoverBg};
-    }
+    } */
   }
 
   .rdt {

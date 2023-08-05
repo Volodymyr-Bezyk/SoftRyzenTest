@@ -8,12 +8,13 @@ import {
 } from './FormSelect.styled';
 
 const FormSelect = props => {
+  const { error = '' } = props;
   const [selectOpen, setSelectOpen] = useState(false);
-  const { options, field } = props;
+  const { options, field, title } = props;
 
   return (
     <FormLabel>
-      <FormLabelText>Category</FormLabelText>
+      <FormLabelText>{title}</FormLabelText>
 
       <Select
         onChange={field?.onChange}
@@ -40,11 +41,16 @@ const FormSelect = props => {
             alignContent: 'center',
             padding: '16px 12px',
             fontSize: 16,
-            border: state.isFocused ? '1px solid #6243FF' : '1px solid #ACA7C3',
+
             borderRadius: '8px',
             transition:
               'color 250ms ease-in-out, border-color 250ms ease-in-out',
             boxShadow: 'none',
+            border: state.isFocused
+              ? '1px solid #6243FF'
+              : error
+              ? '1px solid #FF2B77'
+              : '1px solid #ACA7C3',
 
             '&:hover, &:focus ': {
               borderColor: '#6243FF',
@@ -77,7 +83,7 @@ const FormSelect = props => {
         }}
         placeholder="Input"
       />
-      <ValidationErrorText>invalid input</ValidationErrorText>
+      {error && <ValidationErrorText>{error}</ValidationErrorText>}
     </FormLabel>
   );
 };

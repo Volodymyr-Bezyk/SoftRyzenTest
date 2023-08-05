@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import { Space } from 'antd';
 
+export const ValidationErrorText = styled.span`
+  position: absolute;
+  right: 19px;
+  bottom: -20px;
+
+  color: ${p => p.theme.colors.highPriority};
+  font-family: ${p => p.theme.fontFamily.primary};
+  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-weight: ${p => p.theme.fontWeights.regular};
+  line-height: 1.33;
+`;
+
 export const ClockMoreButton = styled.button`
   position: absolute;
   top: 24px;
@@ -45,6 +57,13 @@ export const ClockWrap = styled(Space)`
     line-height: 1.5;
 
     transition: border-color 250ms ease-in-out;
+
+    border-color: ${p =>
+      p.$error
+        ? p.theme.colors.highPriority
+        : p.theme.colors.sortListItemColor};
+
+    border-color: ${p => p.$focus && p.theme.colors.accent};
 
     &:hover,
     &:focus {

@@ -14,6 +14,35 @@ export const FormLabel = styled.label`
     }
   }
 
+  svg {
+    color: ${p =>
+      p.$error
+        ? p.theme.colors.highPriority
+        : p.theme.colors.sortListItemColor};
+    transition: color 250ms ease-in-out;
+  }
+
+  textarea {
+    border: ${p => p.theme.borders.input};
+    border-color: ${p =>
+      p.$error
+        ? p.theme.colors.highPriority
+        : p.theme.colors.sortListItemColor};
+    transition: color 250ms ease-in-out;
+  }
+
+  &:hover,
+  &:focus-within {
+    svg {
+      color: ${p =>
+        p.$error ? p.theme.colors.highPriority : p => p.theme.colors.accent};
+    }
+    textarea {
+      border-color: ${p =>
+        p.$error ? p.theme.colors.highPriority : p => p.theme.colors.accent};
+    }
+  }
+
   @media (min-width: ${p => p.theme.screens.tablet}) {
     width: 308px;
   }
@@ -44,7 +73,6 @@ export const FormLabelTextArea = styled.textarea`
   outline: none;
   caret-color: ${p => p.theme.colors.buttonTextColor};
 
-  border: ${p => p.theme.borders.input};
   border-radius: ${p => p.theme.radii.input};
   transition: border-color 250ms ease-in-out;
 
@@ -55,22 +83,12 @@ export const FormLabelTextArea = styled.textarea`
   line-height: 1.5;
 
   transition: border-color 250ms ease-in-out;
-
-  &:hover,
-  &:focus {
-    border-color: ${p => p.theme.colors.buttonHoverBg};
-  }
 `;
 
 export const ClearFormInputButton = styled.button`
   position: absolute;
   top: 40px;
   right: 12px;
-
-  svg {
-    color: ${p => p.theme.colors.accent};
-    transition: color 250ms ease-in-out;
-  }
 `;
 
 export const ValidationErrorText = styled.span`
