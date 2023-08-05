@@ -15,7 +15,7 @@ const FormTextInput = props => {
     text,
     fieldName,
     clear = true,
-    value = '',
+    // value = '',
     showInput = true,
     ...other
   } = props;

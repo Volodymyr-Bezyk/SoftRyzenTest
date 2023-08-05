@@ -1,17 +1,11 @@
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 
 import BackLink from 'components/BackLink';
 import PageContentWrapperWithTitle from 'components/PageContentWrapperWithTitle';
 import {
   FormWrap,
   FormInnerDelimeter,
-  FormLabel,
-  FormLabelText,
-  // FormLabelInput,
-  // FormLabelTextArea,
   AddEventButton,
-  // ClearFormInputButton,
-  ValidationErrorText,
 } from './NewEvent.styled';
 
 import { filterOptions } from 'constants/filterListOptions';
@@ -21,11 +15,13 @@ import FormTextInput from 'components/FormTextInput';
 import Calendar from 'components/Calendar';
 import FormSelect from 'components/FormSelect';
 import FormTextArea from 'components/FormTextArea';
+import Clock from 'components/Clock';
 
 const NewEvent = () => {
   const {
     register,
     handleSubmit,
+    control,
     watch,
     formState: { errors },
   } = useForm();
@@ -51,12 +47,23 @@ const NewEvent = () => {
                 fieldName="description"
               />
 
-              <Calendar />
+              <Controller
+                name="date"
+                control={control}
+                rules={{
+                  required: true,
+                }}
+                render={({ field }) => <Calendar field={field} />}
+              />
 
-              <FormLabel>
-                <FormLabelText>Select time</FormLabelText>
-                <ValidationErrorText>invalid input</ValidationErrorText>
-              </FormLabel>
+              <Controller
+                name="time"
+                control={control}
+                rules={{
+                  required: true,
+                }}
+                render={({ field }) => <Clock field={field} />}
+              />
 
               <FormTextInput
                 register={register}
@@ -64,7 +71,16 @@ const NewEvent = () => {
                 fieldName="location"
               />
 
-              <FormSelect options={filterOptions} />
+              <Controller
+                name="category"
+                control={control}
+                rules={{
+                  required: true,
+                }}
+                render={({ field }) => (
+                  <FormSelect options={filterOptions} field={field} />
+                )}
+              />
 
               <FormTextInput
                 register={register}
@@ -72,7 +88,18 @@ const NewEvent = () => {
                 fieldName="picture"
               />
 
-              <FormSelect options={priorityOptions} />
+              <Controller
+                name="priority"
+                control={control}
+                rules={{
+                  required: true,
+                }}
+                render={({ field }) => (
+                  <FormSelect options={priorityOptions} field={field} />
+                )}
+              />
+
+              {/* <FormSelect options={priorityOptions} /> */}
             </FormInnerDelimeter>
 
             <AddEventButton type="submit">Add event</AddEventButton>

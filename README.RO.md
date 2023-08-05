@@ -1,112 +1,51 @@
-# React homework template
+export const CardContainer =
+styled.div` margin-top: 20px; display: flex; justify-content: center;`;
 
-Acest proiect a fost creat cu ajutorul
-[Create React App](https://github.com/facebook/create-react-app). Pentru prezentări
-și configurarea de funcții suplimentare
-[consultați documentația](https://facebook.github.io/create-react-app/docs/getting-started).
+export const CustomCard = styled.div` padding: 32px; width: 712px; height:
+350px; gap: 32px; border-radius: 4px 4px 0 0; box-shadow: 0 0 12px 4px rgba(0,
+0, 0, 0.08);
 
-## Crearea unui repository dintr-un șablon
+@media only screen and (max-width: 559px) { width: 360px; gap: 48px; }
 
-Utilizați acest repository al organizației GoIT ca model pentru crearea unui repository
-pentru proiectul dumneavoastră. Pentru a face acest lucru, faceți clic pe "Use this template" și selectați opțiunea
-"Create a new repository", așa cum se arată în imagine.
+@media only screen and (max-width: 359px) { padding: 24px; } `;
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+export const CardRow = styled.div` display: flex; gap: 32px;
 
-Următorul pas va deschide pagina de creare a unui nou repository. Completați câmpul
-pentru numele acestuia, asigurați-vă că repository-ul este public, apoi faceți clic pe
-«Create repository from template».
+@media only screen and (max-width: 359px) { &:last-child { display: none
+!important; } } `;
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+export const CardColumn = styled.div` flex: 1;`;
 
-Odată ce repository-ul a fost creat, trebuie să accesați setările
-ale repository-ului creat în fila Settings > Actions > General, așa cum urmează
-prezentată în imagine.
+export const ComponentContainer = styled.div` margin-bottom: 20px;`;
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+export const Skeleton = styled.div` border-radius: 4px; opacity: 0.4;`;
 
-După ce ați derulat până la sfârșitul paginii, în secțiunea "Workflow permissions", selectați
-Read and write permissions" (Permisiuni de citire și scriere) și bifați caseta de selectare. Acest lucru
-este necesar pentru a automatiza procesul de lansare a proiectului.
+export const SkeletonImage =
+styled.div` display: flex; align-items: center; justify-content: center; height: 100%;`;
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+export const SkeletonBoxSmall = styled.div` width: 124px; height: 15px;`;
 
-Aveți acum un repository personal de proiecte, cu o structură de fișiere și dosare.
-Lucrați apoi cu acesta așa cum ați face-o cu orice alt repository personal,
-clonați-l pe computerul dumneavoastră, scrieți codul, confirmați-l și încărcați-l pe
-GitHub.
+export const SkeletonBoxMedium = styled.div` width: 80px; height: 30px;
 
-## Pregătirea pentru muncă
+@media only screen and (max-width: 559px) { width: 100%; } `;
 
-1. Asigurați-vă că aveți versiunea LTS a Node.js instalată pe computerul dumneavoastră.
-   [Descărcați-o și instalați-o](https://nodejs.org/en/) dacă este necesar.
-2. Instalați dependențele de bază ale proiectului cu ajutorul comenzii npm install.
-3. Porniți modul de dezvoltare prin rularea comenzii npm start.
-4. Accesați [http://localhost:3000](http://localhost:3000) în browserul dumneavoastră.
-   Această pagină se va reîncărca automat după salvarea modificărilor aduse la
-   fișiere de proiect.
+export const SkeletonBoxLarge = styled.div` width: 100%; height: 30px;`;
 
-## Deploy
+export const SkeletonBoxHalf = styled.div` width: 100%; height: 168px;`;
 
-Versiunea de producție a proiectului va fi automat legată, construită și
-distribuită pe GitHub Pages, în ramura gh-pages, de fiecare dată când se va lansa proiectul.
-ramura main este actualizată. De exemplu, după un push direct sau o cerere de pull-request acceptată. Pentru a face acest lucru
-În fișierul package.json, editați câmpul homepage înlocuind
-your_username și your_repo_name cu numele dvs. propriu și trimiteți modificările la GitHub.
+export const SkeletonContainer = styled.div` display: flex;`;
 
-json
-"homepage": "https://your_username.github.io/your_repo_name/"
+export const Top = styled.div` flex-direction: column; gap: 5px; margin-bottom:
+20px;
 
+@media only screen and (max-width: 359px) { margin-bottom: 68px; } `;
 
-În continuare, mergeți la setările repository-ului GitHub (`Settings` > `Pages`) și
-setați să distribuiți versiunea de producție a fișierelor în folderul /root al ramurii gh-pages, dacă
-acest lucru nu a fost făcut în mod automat.
+export const Bottom = styled.div` justify-content: flex-end; gap: 16px;
 
-![GitHub Pages settings](./assets/repo-settings.png)
+@media only screen and (max-width: 359px) { flex-direction: column; gap: 8px; }
+`;
 
-### Deployment status
+export const Icon =
+styled.i` font-size: 63px; line-height: 54px; opacity: 0.2;`;
 
-Starea de implementare a ultimei comenzi este indicată de o pictogramă în dreptul ID-ului său.
-
-- Galben - Proiectul este în curs de construire și de desfășurare.
-- Verde - Implementarea s-a finalizat cu succes.
-- Roșu - A apărut o eroare în timpul legării, construirii sau desfășurării.
-
-Informații mai detaliate privind starea pot fi vizualizate făcând clic pe pictogramă, iar în fereastra
-clic pe link-ul Details din fereastra derulantă.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Pagina live
-
-După un timp, de obicei câteva minute, pagina live poate fi vizualizată.
-la adresa specificată în proprietatea homepage editată. De exemplu, iată
-link către versiunea live pentru acest depozit
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Dacă se deschide o pagină goală, asigurați-vă că nu există erori în fila Console.
-asociate cu căi de acces incorecte la fișierele CSS și JS ale proiectului (**404**). Cel mai probabil
-Probabil că aveți o valoare greșită pentru proprietatea homepage din fișierul package.json.
-
-### Rutarea
-
-Dacă aplicația utilizează biblioteca react-router-dom pentru rutare,
-Trebuie să configurați suplimentar componenta <BrowserRouter>` prin trecerea în prop
-basename numele exact al repository-ului dumneavoastră. O bară oblică la începutul liniei este obligatorie.
-
-jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-
-
-## Cum funcționează
-
-![How it works](./assets/how-it-works.png)
-
-1. După fiecare "push" către ramura main a depozitului GitHub, se va crea un fișier special
-   script (GitHub Action) din fișierul .github/workflows/deploy.yml.
-2. Toate fișierele din repository sunt copiate pe server, unde proiectul este inițializat și construit înainte de a fi implementat.
-3. Dacă toți pașii sunt reușiți, versiunea de producție asamblată a fișierelor proiectului
-   este trimisă la ramura gh-pages. În caz contrar, jurnalul de execuție al scriptului
-   scriptului va indica care este problema.
+export const Header4 = styled.h4` opacity: 0.2; font-size: 20px;`;

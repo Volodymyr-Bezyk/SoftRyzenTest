@@ -21,6 +21,12 @@ export const FormLabel = styled.label`
     }
   }
 
+  & input:placeholder-shown + button {
+    svg {
+      display: none;
+    }
+  }
+
   @media (min-width: ${p => p.theme.screens.tablet}) {
     width: 308px;
   }

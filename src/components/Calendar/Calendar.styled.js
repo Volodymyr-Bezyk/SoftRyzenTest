@@ -52,6 +52,7 @@ export const CalendarMoreButton = styled.button`
   justify-content: end;
 
   svg {
+    display: block !important;
     color: ${p => p.theme.colors.sortListItemColor};
 
     transition: color 250ms ease-in-out;
@@ -172,6 +173,7 @@ export const StyledDatetime = styled(Datetime)`
   }
 
   .rdtPicker {
+    margin-top: -12px;
     display: none;
     position: absolute;
 

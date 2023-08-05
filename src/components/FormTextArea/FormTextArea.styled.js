@@ -8,6 +8,12 @@ export const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
 
+  & textarea:placeholder-shown + button {
+    svg {
+      display: none;
+    }
+  }
+
   @media (min-width: ${p => p.theme.screens.tablet}) {
     width: 308px;
   }

@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import moment from 'moment';
-import { MdExpandMore } from 'react-icons/md';
+import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 import FormTextInput from 'components/FormTextInput/FormTextInput';
 import { dateFormatter } from 'utils/dateFormatter';
 
 import {
-  FormLabel,
-  FormLabelText,
   StyledDatetime,
-  CalendarWrap,
   CalendarButtons,
   CalendarButtonCancel,
   CalendarButtonChoose,
   CalendarMoreButton,
 } from './Calendar.styled';
 
-const Calendar = () => {
+const Calendar = props => {
+  const { field } = props;
+
   const [calendarClosed, setCalendarClosed] = useState(true);
   const [selectedDate, setSelectedDate] = useState('');
 
@@ -23,6 +22,11 @@ const Calendar = () => {
   function valid(current) {
     return current.isAfter(yesterday);
   }
+
+  const onChange = date => {
+    setSelectedDate(dateFormatter(date));
+    field?.onChange(date);
+  };
 
   const toggleCalendar = () => {
     setCalendarClosed(!calendarClosed);
@@ -62,7 +66,8 @@ const Calendar = () => {
       )}
 
       <CalendarMoreButton type="button" onClick={() => toggleCalendar()}>
-        <MdExpandMore size={24} />
+        {!calendarClosed && <MdExpandLess size={24} />}
+        {calendarClosed && <MdExpandMore size={24} />}
       </CalendarMoreButton>
     </FormTextInput>
   );
@@ -74,7 +79,7 @@ const Calendar = () => {
       dateFormat="DD.MM.YYYY"
       input={true}
       open={!calendarClosed}
-      onChange={date => setSelectedDate(dateFormatter(date))}
+      onChange={onChange}
       renderInput={props => <CalendarContent />}
     />
   );
