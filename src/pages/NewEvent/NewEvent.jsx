@@ -1,6 +1,5 @@
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 
 import BackLink from 'components/BackLink';
 import PageContentWrapperWithTitle from 'components/PageContentWrapperWithTitle';
@@ -22,13 +21,12 @@ import { validationSchema } from 'validationSchema/validationSchema';
 
 const NewEvent = () => {
   const {
-    register,
     handleSubmit,
     control,
 
     formState: { errors },
   } = useForm({
-    mode: 'onTouched',
+    mode: 'onChange',
     resolver: yupResolver(validationSchema),
     defaultValues: {
       title: '',
@@ -38,7 +36,6 @@ const NewEvent = () => {
   });
 
   const onSubmit = data => console.log(data);
-  // console.log('err', errors);
 
   return (
     <>
@@ -47,19 +44,43 @@ const NewEvent = () => {
         <FormWrap>
           <form onSubmit={handleSubmit(onSubmit)}>
             <FormInnerDelimeter>
-              <FormTextInput
+              <Controller
+                name="title"
+                control={control}
+                render={({ field }) => (
+                  <FormTextInput
+                    field={field}
+                    error={errors?.title?.message}
+                    text="Title"
+                  />
+                )}
+              />
+
+              {/* <FormTextInput
                 register={register}
                 text="Title"
                 fieldName="title"
                 error={errors?.title?.message}
+              /> */}
+
+              <Controller
+                name="description"
+                control={control}
+                render={({ field }) => (
+                  <FormTextArea
+                    field={field}
+                    error={errors?.description?.message}
+                    text="Description"
+                  />
+                )}
               />
 
-              <FormTextArea
+              {/* <FormTextArea
                 register={register}
                 text="Description"
                 fieldName="description"
                 error={errors?.description?.message}
-              />
+              /> */}
 
               <Controller
                 name="date"
@@ -77,12 +98,24 @@ const NewEvent = () => {
                 )}
               />
 
-              <FormTextInput
+              <Controller
+                name="location"
+                control={control}
+                render={({ field }) => (
+                  <FormTextInput
+                    field={field}
+                    error={errors?.location?.message}
+                    text="Location"
+                  />
+                )}
+              />
+
+              {/* <FormTextInput
                 register={register}
                 text="Location"
                 fieldName="location"
                 error={errors?.location?.message}
-              />
+              /> */}
 
               <Controller
                 name="category"
@@ -97,12 +130,24 @@ const NewEvent = () => {
                 )}
               />
 
+              <Controller
+                name="picture"
+                control={control}
+                render={({ field }) => (
+                  <FormTextInput
+                    field={field}
+                    error={errors?.picture?.message}
+                    text="Add picture"
+                  />
+                )}
+              />
+              {/* 
               <FormTextInput
                 register={register}
                 text="Add picture"
                 fieldName="picture"
                 error={errors?.picture?.message}
-              />
+              /> */}
 
               <Controller
                 name="priority"

@@ -17,7 +17,7 @@ export const ClockMoreButton = styled.button`
   position: absolute;
   top: 24px;
   right: 12px;
-  width: 150px;
+  width: calc(100% - 24px);
   height: 56px;
 
   display: flex;

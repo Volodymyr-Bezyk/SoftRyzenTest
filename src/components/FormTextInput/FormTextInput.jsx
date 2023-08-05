@@ -12,7 +12,7 @@ import {
 const FormTextInput = props => {
   const {
     children,
-    register,
+    field,
     text,
     fieldName,
     clear = true,
@@ -24,7 +24,15 @@ const FormTextInput = props => {
 
   const [fieldData, setFieldData] = useState(value);
 
-  console.log('register', register);
+  const inputHandler = e => {
+    setFieldData(e.target.value);
+    field?.onChange(e.target.value);
+  };
+
+  const inputCleaner = () => {
+    setFieldData('');
+    field?.onChange('');
+  };
 
   return (
     <FormLabel $error={error}>
@@ -33,14 +41,13 @@ const FormTextInput = props => {
         <FormLabelInput
           {...other}
           type="text"
-          {...register(`${fieldName}`)}
           placeholder="Input"
           value={fieldData}
-          onChange={e => setFieldData(e.target.value)}
+          onChange={inputHandler}
         />
       )}
       {clear && (
-        <ClearFormInputButton type="button">
+        <ClearFormInputButton type="button" onClick={inputCleaner}>
           <IoIosClose size={24} />
         </ClearFormInputButton>
       )}

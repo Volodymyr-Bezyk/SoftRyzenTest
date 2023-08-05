@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 
 import {
@@ -9,16 +10,29 @@ import {
 } from './FormTextArea.styled';
 
 const FormTextArea = props => {
-  const { register, text, fieldName, error = '' } = props;
+  const { text, field, value = '', error = '' } = props;
+
+  const [fieldData, setFieldData] = useState(value);
+
+  const inputHandler = e => {
+    setFieldData(e.target.value);
+    field?.onChange(e.target.value);
+  };
+
+  const inputCleaner = () => {
+    setFieldData('');
+    field?.onChange('');
+  };
 
   return (
     <FormLabel $error={error}>
       <FormLabelText>{text}</FormLabelText>
       <FormLabelTextArea
-        {...register(`${fieldName}`, { required: true })}
+        onChange={inputHandler}
         placeholder="Input"
+        value={fieldData}
       ></FormLabelTextArea>
-      <ClearFormInputButton type="button">
+      <ClearFormInputButton type="button" onClick={inputCleaner}>
         <IoIosClose size={24} />
       </ClearFormInputButton>
       {error && <ValidationErrorText>{error}</ValidationErrorText>}
