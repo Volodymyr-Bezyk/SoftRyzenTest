@@ -50,10 +50,10 @@ const Clock = props => {
           use12Hours
           format="hh:mm a"
           placeholder={openClock ? 'Select time' : 'Input'}
-          placement="bottomLeft"
+          bottomLeft={true}
           showNow={false}
           popupClassName="custom-time-picker"
-          popupStyle={{ color: 'red', backgroundColor: 'tomato' }}
+          // popupStyle={{ color: 'red', backgroundColor: 'tomato' }}
         />
       </ClockWrap>
 
