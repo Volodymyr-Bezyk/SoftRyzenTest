@@ -56,7 +56,7 @@ const EventListCardItem = props => {
         <InfoThumb className="infoThumb">
           <TimeDetails>
             <CardDate>
-              {date.split('.')[0]}.{date.split('.')[1]} at{' '}
+              {date.split('.')[0]}.{date.split('.')[1]}.{date.slice(-2)} at{' '}
               {convertTimeFormat(time).split(' ')[0]}
             </CardDate>
             <CardLocation>{location}</CardLocation>

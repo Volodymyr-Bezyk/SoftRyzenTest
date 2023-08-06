@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { useSearch } from 'hooks/useSearchField';
 import { getEvents } from 'utils/getEvents';
 import { sortEvents } from 'utils/sortEvents';
 import EventListCardItem from 'components/EventListCardItem';
@@ -10,8 +11,15 @@ import { EventList } from './Events.styled';
 const Events = ({ category, sortBy }) => {
   const [events, setEvents] = useState([]);
   const linkLocation = useLocation();
+  const { searchField } = useSearch();
 
-  const filteredEvents = events.filter(
+  const searchedEvents = events.filter(
+    event =>
+      event.title.toLowerCase().includes(searchField.toLowerCase()) ||
+      event.description.toLowerCase().includes(searchField.toLowerCase())
+  );
+
+  const filteredEvents = searchedEvents.filter(
     event =>
       event.category.value.toLowerCase() === category.toLowerCase() ||
       category === ''

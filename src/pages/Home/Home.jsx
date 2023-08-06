@@ -16,7 +16,6 @@ import {
 const Home = () => {
   const [category, setCategory] = useState('');
   const [sortBy, setSortBy] = useState('');
-  console.log('sortBy', sortBy);
 
   return (
     <>
