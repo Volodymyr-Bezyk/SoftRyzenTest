@@ -58,7 +58,7 @@ export const FilterButton = styled.button`
   }
 `;
 
-export const FilterTextWrap = styled.span`
+export const FilterTextWrap = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -82,6 +82,7 @@ export const FilterTextWrap = styled.span`
   transition: transform 250ms ease-in-out 100ms, opacity 200ms ease-in-out 100ms;
 
   @media (min-width: ${p => p.theme.screens.tablet}) {
+    padding: ${p => p.theme.space[8]}px;
     width: 143px;
     transform: translate(0);
     pointer-events: all;
@@ -106,6 +107,8 @@ export const FilterText = styled.span`
 
   @media (min-width: ${p => p.theme.screens.tablet}) {
     display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
 `;
 
@@ -175,7 +178,8 @@ export const FilterListItemButton = styled.button`
 `;
 
 export const FilterListItemText = styled.span`
-  color: ${p => p.theme.colors.sortListItemColor};
+  color: ${p =>
+    p.$active ? p.theme.colors.accent : p.theme.colors.sortListItemColor};
   font-family: ${p => p.theme.fontFamily.primary};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.regular};

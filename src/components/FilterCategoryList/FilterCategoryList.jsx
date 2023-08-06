@@ -14,8 +14,18 @@ import {
   FilterListItemText,
 } from './FilterCategoryList.styled';
 
-const FilterByCaregory = () => {
+const FilterByCaregory = ({ category, setCategory }) => {
   const [showFilterMenu, setShowFilterMenu] = useState(false);
+  const [activeCategoryIdx, setActiveCategoryIdx] = useState(null);
+
+  const activeCategory = idx => {
+    if (activeCategoryIdx === idx) {
+      setActiveCategoryIdx(null);
+      setCategory('');
+      return;
+    }
+    setActiveCategoryIdx(idx);
+  };
 
   return (
     <FilterButtonWrap>
@@ -24,7 +34,7 @@ const FilterByCaregory = () => {
         type="button"
         onClick={() => setShowFilterMenu(!showFilterMenu)}
       >
-        <FilterText>Business</FilterText>
+        <FilterText>{category || 'All'}</FilterText>
         <LuFilter size={24} />
         <FilterTextWrap $filterMenu={showFilterMenu}>
           <FilterTextMobile>Category</FilterTextMobile>
@@ -34,8 +44,16 @@ const FilterByCaregory = () => {
       <FilterList $filterMenu={showFilterMenu}>
         {filterOptions.map(({ label }, idx) => (
           <FilterListItem key={idx}>
-            <FilterListItemButton>
-              <FilterListItemText>{label}</FilterListItemText>
+            <FilterListItemButton
+              onClick={() => {
+                setCategory(label);
+                setShowFilterMenu(false);
+                activeCategory(idx);
+              }}
+            >
+              <FilterListItemText $active={idx === activeCategoryIdx}>
+                {label}
+              </FilterListItemText>
             </FilterListItemButton>
           </FilterListItem>
         ))}

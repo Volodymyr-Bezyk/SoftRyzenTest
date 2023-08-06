@@ -42,12 +42,13 @@ const Form = ({ page, event = null }) => {
   const onSubmit = async data => {
     if (page === 'newEvent') {
       await createEvent(data);
+      navigate('/', { replace: true });
     }
     if (page === 'editEvent') {
       await editEvent(data, event.id);
+      navigate(`/event/${event.id}`, { replace: true });
     }
 
-    navigate('/', { replace: true });
     reset({ ...data });
   };
 

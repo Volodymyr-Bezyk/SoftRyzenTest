@@ -48,7 +48,8 @@ export const SortButton = styled.button`
   }
 
   @media (min-width: ${p => p.theme.screens.tablet}) {
-    width: 129px;
+    /* width: 129px; */
+    width: 170px;
     justify-content: flex-end;
   }
 `;
@@ -77,7 +78,9 @@ export const SortTextWrap = styled.span`
   transition: transform 250ms ease-in-out 100ms, opacity 200ms ease-in-out 100ms;
 
   @media (min-width: ${p => p.theme.screens.tablet}) {
-    width: 129px;
+    /* width: 129px; */
+    padding: ${p => p.theme.space[8]}px ${p => p.theme.space[6]}px;
+    width: 170px;
     transform: translate(0);
     pointer-events: all;
     transition: transform 250ms ease-in-out, opacity 200ms ease-in-out;
@@ -98,6 +101,9 @@ export const SortText = styled.span`
 
   @media (min-width: ${p => p.theme.screens.tablet}) {
     display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 `;
 
@@ -135,7 +141,8 @@ export const SortList = styled.ul`
   @media (min-width: ${p => p.theme.screens.tablet}) {
     top: 56px;
     left: 0;
-    width: 129px;
+    /* width: 129px; */
+    width: 170px;
     transform: translate(0);
   }
 `;
@@ -165,7 +172,8 @@ export const SortListItemButton = styled.button`
 `;
 
 export const SortListItemButtonText = styled.span`
-  color: ${p => p.theme.colors.sortListItemColor};
+  color: ${p =>
+    p.$active ? p.theme.colors.accent : p.theme.colors.sortListItemColor};
   font-family: ${p => p.theme.fontFamily.primary};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.regular};

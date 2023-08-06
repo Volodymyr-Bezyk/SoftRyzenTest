@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 import FilterByCaregory from 'components/FilterCategoryList';
@@ -13,12 +14,16 @@ import {
 } from './Home.styled';
 
 const Home = () => {
+  const [category, setCategory] = useState('');
+  const [sortBy, setSortBy] = useState('');
+  console.log('sortBy', sortBy);
+
   return (
     <>
       <MenuWrap>
         <Menu>
-          <FilterByCaregory />
-          <SortByCategory />
+          <FilterByCaregory setCategory={setCategory} category={category} />
+          <SortByCategory sortBy={sortBy} setSortBy={setSortBy} />
           <AddEventLink to={'newEvent'}>
             <AiOutlinePlus size={24} color="#FFFFFF" />
             <AddEventLinkText>Add new event</AddEventLinkText>
@@ -27,7 +32,7 @@ const Home = () => {
         <MainTitle>My Events</MainTitle>
       </MenuWrap>
 
-      <Events />
+      <Events category={category} sortBy={sortBy} />
     </>
   );
 };
