@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect, useState } from 'react';
 
 import FormTextInput from 'components/FormTextInput';
 import Calendar from 'components/Calendar';
@@ -17,14 +16,12 @@ import { editEvent } from 'utils/editEvent';
 
 import { FormWrap, FormInnerDelimeter, AddEventButton } from './Form.styled';
 
-const Form = ({ page, eventInfo = null }) => {
+const Form = ({ page, event = null }) => {
   const navigate = useNavigate();
-  const [event, setEvent] = useState(eventInfo);
 
   const {
     handleSubmit,
     control,
-    watch,
     reset,
     formState: { errors },
   } = useForm({
@@ -41,15 +38,6 @@ const Form = ({ page, eventInfo = null }) => {
       priority: event?.priority || null,
     },
   });
-
-  useEffect(() => {
-    // console.log('render', Date.now());
-    // console.log('event', event);
-    setEvent(eventInfo);
-  }, [eventInfo]);
-
-  const data = watch();
-  console.log('watch', data);
 
   const onSubmit = async data => {
     if (page === 'newEvent') {
@@ -70,7 +58,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="title"
             control={control}
-            // defaultValue={event?.title}
             render={({ field }) => (
               <FormTextInput
                 field={field}
@@ -84,7 +71,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="description"
             control={control}
-            // defaultValue={event?.description || ''}
             render={({ field }) => (
               <FormTextArea
                 field={field}
@@ -98,7 +84,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="date"
             control={control}
-            // defaultValue={event?.date || ''}
             render={({ field }) => (
               <Calendar
                 field={field}
@@ -111,7 +96,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="time"
             control={control}
-            // defaultValue={event?.time || ''}
             render={({ field }) => (
               <Clock
                 field={field}
@@ -124,7 +108,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="location"
             control={control}
-            // defaultValue={event?.location || ''}
             render={({ field }) => (
               <FormTextInput
                 field={field}
@@ -138,7 +121,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="category"
             control={control}
-            // defaultValue={event?.category || ''}
             render={({ field }) => (
               <FormSelect
                 options={filterOptions}
@@ -153,7 +135,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="picture"
             control={control}
-            // defaultValue={event?.picture || ''}
             render={({ field }) => (
               <FormTextInput
                 field={field}
@@ -167,7 +148,6 @@ const Form = ({ page, eventInfo = null }) => {
           <Controller
             name="priority"
             control={control}
-            // defaultValue={event?.priority || ''}
             render={({ field }) => (
               <FormSelect
                 options={priorityOptions}

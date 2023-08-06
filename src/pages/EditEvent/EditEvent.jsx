@@ -22,7 +22,7 @@ const EditEvent = () => {
     <>
       <BackLink />
       <PageContentWrapperWithTitle title="Edit event"></PageContentWrapperWithTitle>
-      <Form page="editEvent" eventInfo={event} />
+      <Form page="editEvent" event={event} />
     </>
   );
 };
