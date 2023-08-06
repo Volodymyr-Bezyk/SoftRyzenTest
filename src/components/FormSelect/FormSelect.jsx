@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Select from 'react-select';
 
 import {
@@ -8,16 +8,31 @@ import {
 } from './FormSelect.styled';
 
 const FormSelect = props => {
-  const { error = '' } = props;
+  const { options, field, title, error = '', value = '' } = props;
   const [selectOpen, setSelectOpen] = useState(false);
-  const { options, field, title } = props;
+  const [defaultValue, setDefaultValue] = useState();
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (value && firstRender.current) {
+      setDefaultValue(value);
+      field?.onChange(value);
+      firstRender.current = false;
+    }
+  }, [field, value]);
+
+  const selectHandler = option => {
+    setDefaultValue(option);
+    field?.onChange(option);
+  };
 
   return (
     <FormLabel>
       <FormLabelText>{title}</FormLabelText>
 
       <Select
-        onChange={field?.onChange}
+        value={defaultValue}
+        onChange={selectHandler}
         menuIsOpen={selectOpen}
         onMenuOpen={() => setSelectOpen(true)}
         onMenuClose={() => setSelectOpen(false)}

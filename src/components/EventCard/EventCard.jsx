@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
-import { getOneEventById } from 'utils/getOneEventById';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { convertTimeFormat } from 'utils/converTimeFormat';
 import { deleteEvents } from 'utils/deleteEvent';
 import defaultPhoto from '../../assets/defaultWide.jpg';
@@ -22,21 +20,10 @@ import {
   CardDeleteButton,
 } from './EventCard.styled';
 
-const EventCard = () => {
-  const [event, setEvent] = useState(null);
-  const { eventId } = useParams();
+const EventCard = ({ event }) => {
   const navigate = useNavigate();
   const linkLocation = useLocation();
 
-  useEffect(() => {
-    (async function () {
-      const { data } = await getOneEventById(eventId);
-      setEvent(data);
-    })();
-    return () => {};
-  }, [eventId]);
-
-  if (!event) return;
   const {
     id,
     title,

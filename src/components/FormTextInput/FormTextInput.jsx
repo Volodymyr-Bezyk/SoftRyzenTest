@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { IoIosClose } from 'react-icons/io';
 
 import {
@@ -22,7 +22,16 @@ const FormTextInput = props => {
     ...other
   } = props;
 
-  const [fieldData, setFieldData] = useState(value);
+  const [fieldData, setFieldData] = useState(value ?? '');
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (value && firstRender.current) {
+      setFieldData(value);
+      field?.onChange(value);
+      firstRender.current = false;
+    }
+  }, [field, value]);
 
   const inputHandler = e => {
     setFieldData(e.target.value);

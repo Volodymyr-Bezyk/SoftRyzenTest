@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import moment from 'moment';
 import { MdExpandMore, MdExpandLess } from 'react-icons/md';
-import FormTextInput from 'components/FormTextInput/FormTextInput';
+
 import { dateFormatter } from 'utils/dateFormatter';
+
+import FormTextInput from 'components/FormTextInput/FormTextInput';
 
 import {
   ValidationErrorText,
@@ -15,10 +17,18 @@ import {
 } from './Calendar.styled';
 
 const Calendar = props => {
-  const { field, error = '' } = props;
-
+  const { field, error = '', value = '' } = props;
   const [calendarClosed, setCalendarClosed] = useState(true);
   const [selectedDate, setSelectedDate] = useState('');
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (value && firstRender.current) {
+      setSelectedDate(value);
+      field?.onChange(value);
+      firstRender.current = false;
+    }
+  }, [field, value]);
 
   const yesterday = moment().subtract(1, 'day');
   function valid(current) {

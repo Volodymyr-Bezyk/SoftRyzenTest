@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect, useState } from 'react';
 
 import FormTextInput from 'components/FormTextInput';
 import Calendar from 'components/Calendar';
@@ -12,35 +13,56 @@ import { filterOptions } from 'constants/filterListOptions';
 import { priorityOptions } from 'constants/priorityOptions';
 import { validationSchema } from 'validationSchema/validationSchema';
 import { createEvent } from 'utils/createEvent';
+import { editEvent } from 'utils/editEvent';
 
 import { FormWrap, FormInnerDelimeter, AddEventButton } from './Form.styled';
 
-const Form = page => {
+const Form = ({ page, eventInfo = null }) => {
   const navigate = useNavigate();
+  const [event, setEvent] = useState(eventInfo);
 
   const {
     handleSubmit,
     control,
+    watch,
     reset,
     formState: { errors },
   } = useForm({
     mode: 'onChange',
     resolver: yupResolver(validationSchema),
     defaultValues: {
-      title: '',
-      location: '',
-      picture: '',
+      title: event?.title,
+      description: event?.description || '',
+      date: event?.date || '',
+      time: event?.time || '',
+      location: event?.location || '',
+      category: event?.category || null,
+      picture: event?.picture || '',
+      priority: event?.priority || null,
     },
   });
+
+  useEffect(() => {
+    // console.log('render', Date.now());
+    // console.log('event', event);
+    setEvent(eventInfo);
+  }, [eventInfo]);
+
+  const data = watch();
+  console.log('watch', data);
 
   const onSubmit = async data => {
     if (page === 'newEvent') {
       await createEvent(data);
     }
+    if (page === 'editEvent') {
+      await editEvent(data, event.id);
+    }
 
     navigate('/', { replace: true });
     reset({ ...data });
   };
+
   return (
     <FormWrap>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -48,11 +70,13 @@ const Form = page => {
           <Controller
             name="title"
             control={control}
+            // defaultValue={event?.title}
             render={({ field }) => (
               <FormTextInput
                 field={field}
                 error={errors?.title?.message}
                 text="Title"
+                value={event?.title}
               />
             )}
           />
@@ -60,11 +84,13 @@ const Form = page => {
           <Controller
             name="description"
             control={control}
+            // defaultValue={event?.description || ''}
             render={({ field }) => (
               <FormTextArea
                 field={field}
                 error={errors?.description?.message}
                 text="Description"
+                value={event?.description}
               />
             )}
           />
@@ -72,27 +98,39 @@ const Form = page => {
           <Controller
             name="date"
             control={control}
+            // defaultValue={event?.date || ''}
             render={({ field }) => (
-              <Calendar field={field} error={errors?.date?.message} />
+              <Calendar
+                field={field}
+                error={errors?.date?.message}
+                value={event?.date}
+              />
             )}
           />
 
           <Controller
             name="time"
             control={control}
+            // defaultValue={event?.time || ''}
             render={({ field }) => (
-              <Clock field={field} error={errors?.time?.message} />
+              <Clock
+                field={field}
+                error={errors?.time?.message}
+                value={event?.time}
+              />
             )}
           />
 
           <Controller
             name="location"
             control={control}
+            // defaultValue={event?.location || ''}
             render={({ field }) => (
               <FormTextInput
                 field={field}
                 error={errors?.location?.message}
                 text="Location"
+                value={event?.location}
               />
             )}
           />
@@ -100,12 +138,14 @@ const Form = page => {
           <Controller
             name="category"
             control={control}
+            // defaultValue={event?.category || ''}
             render={({ field }) => (
               <FormSelect
                 options={filterOptions}
                 field={field}
                 title="Category"
                 error={errors?.category?.message}
+                value={event?.category}
               />
             )}
           />
@@ -113,11 +153,13 @@ const Form = page => {
           <Controller
             name="picture"
             control={control}
+            // defaultValue={event?.picture || ''}
             render={({ field }) => (
               <FormTextInput
                 field={field}
                 error={errors?.picture?.message}
                 text="Add picture"
+                value={event?.picture}
               />
             )}
           />
@@ -125,18 +167,22 @@ const Form = page => {
           <Controller
             name="priority"
             control={control}
+            // defaultValue={event?.priority || ''}
             render={({ field }) => (
               <FormSelect
                 options={priorityOptions}
                 field={field}
                 title="Priority"
                 error={errors?.priority?.message}
+                value={event?.priority}
               />
             )}
           />
         </FormInnerDelimeter>
 
-        <AddEventButton type="submit">Add event</AddEventButton>
+        <AddEventButton type="submit">
+          {page === 'editEvent' ? 'Save' : 'Add event'}
+        </AddEventButton>
       </form>
     </FormWrap>
   );

@@ -8,6 +8,15 @@ export const validationSchema = yup.object({
   date: yup.string().required(),
   time: yup.object().required(),
 
+  // time: yup
+  //   .mixed()
+  //   .test(
+  //     'isStringOrObject',
+  //     'Field must be a string or an object',
+  //     value => typeof value === 'string' || typeof value === 'object'
+  //   )
+  //   .required(),
+
   location: yup.string().required().min(4).max(20),
 
   picture: yup.string().url().nullable(),

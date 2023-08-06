@@ -1,6 +1,8 @@
 import { TimePicker } from 'antd';
-import { useState } from 'react';
+import dayjs from 'dayjs';
+import { useState, useEffect, useRef } from 'react';
 import { MdExpandMore, MdExpandLess } from 'react-icons/md';
+
 import FormTextInput from 'components/FormTextInput';
 
 import {
@@ -10,11 +12,23 @@ import {
 } from './Clock.styled';
 
 const Clock = props => {
-  const { field, error = '' } = props;
+  const { field, error = '', value = '' } = props;
   const [openClock, setOpenClock] = useState(false);
-  const [time, setTime] = useState(false);
+  const [time, setTime] = useState('');
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (value && firstRender.current) {
+      setTime(dayjs(value));
+      field?.onChange(dayjs(value));
+      firstRender.current = false;
+    }
+  }, [field, value]);
 
   const onSelectTime = time => {
+    setTime(time);
+    field?.onChange(time);
+
     setTime(time);
     field?.onChange(time);
   };
@@ -38,8 +52,8 @@ const Clock = props => {
           placeholder={openClock ? 'Select time' : 'Input'}
           placement="bottomLeft"
           showNow={false}
-          popupStyle={{}}
           popupClassName="custom-time-picker"
+          popupStyle={{ color: 'red', backgroundColor: 'tomato' }}
         />
       </ClockWrap>
 
