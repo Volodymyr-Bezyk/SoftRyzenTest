@@ -29,7 +29,7 @@ const Layout = () => {
               },
             }}
           />
-          <Suspense fallback={<PageSkeleton layout="layout" />}>
+          <Suspense fallback={<PageSkeleton />}>
             <Outlet />
           </Suspense>
         </Container>
