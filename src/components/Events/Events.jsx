@@ -13,6 +13,7 @@ const Events = ({ category, sortBy }) => {
   const [events, setEvents] = useState([]);
   const linkLocation = useLocation();
   const { searchField } = useSearch();
+  const [isLoading, setIsLoading] = useState(true);
 
   const searchedEvents = events.filter(
     event =>
@@ -31,6 +32,7 @@ const Events = ({ category, sortBy }) => {
     (async function getEventsList() {
       const data = await getEvents();
       setEvents(data);
+      setIsLoading(false);
     })();
 
     return () => {};
@@ -51,7 +53,7 @@ const Events = ({ category, sortBy }) => {
       ) : (
         <PageSkeleton />
       )}
-      {sortedEvents.length === 0 && <p>No such events yet</p>}
+      {!isLoading && sortedEvents.length === 0 && <p>No such events yet</p>}
     </>
   );
 };
