@@ -53,7 +53,6 @@ const Clock = props => {
           bottomLeft={true}
           showNow={false}
           popupClassName="custom-time-picker"
-          // popupStyle={{ color: 'red', backgroundColor: 'tomato' }}
         />
       </ClockWrap>
 

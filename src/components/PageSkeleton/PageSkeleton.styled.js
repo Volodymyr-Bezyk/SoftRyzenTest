@@ -2,10 +2,20 @@ import styled from 'styled-components';
 
 import ContentLoader from 'react-content-loader';
 
-export const PageSkeletonWrap = styled(ContentLoader)`
+export const PageSkeletonContent = styled(ContentLoader)`
   width: 100%;
 
-  @media (min-width: 768px) {
-    /* width: 628px; */
+  @media (min-width: 1440px) {
+    width: 60%;
   }
+`;
+
+export const PageSkeletonWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LayoutSkeletonWrap = styled(ContentLoader)`
+  width: 100%;
 `;

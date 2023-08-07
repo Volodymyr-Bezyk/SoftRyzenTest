@@ -2,8 +2,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { convertTimeFormat } from 'utils/converTimeFormat';
 import { deleteEvents } from 'utils/deleteEvent';
 import defaultPhoto from '../../assets/defaultWide.jpg';
+import { dateFormatter } from 'utils/dateFormatter';
 
 import PageContentWrapperWithTitle from 'components/PageContentWrapperWithTitle';
+import PageSkeleton from 'components/PageSkeleton';
 
 import {
   EventCardThumb,
@@ -41,7 +43,7 @@ const EventCard = ({ event }) => {
     navigate('/', { replace: true });
   };
 
-  return (
+  return event ? (
     <PageContentWrapperWithTitle title={title} position={'center'}>
       <EventCardThumb>
         <EventCardImg
@@ -57,7 +59,7 @@ const EventCard = ({ event }) => {
             </CardPriority>
             <CardLocation>{location}</CardLocation>
             <CardDate>
-              {date} at {convertTimeFormat(time)}
+              {dateFormatter(date)} at {convertTimeFormat(time)}
             </CardDate>
           </EventCardPriorityThumb>
 
@@ -75,6 +77,8 @@ const EventCard = ({ event }) => {
         </DetailsThumb>
       </EventCardThumb>
     </PageContentWrapperWithTitle>
+  ) : (
+    <PageSkeleton />
   );
 };
 
