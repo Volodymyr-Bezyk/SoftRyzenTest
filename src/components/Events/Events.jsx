@@ -6,6 +6,7 @@ import { getEvents } from 'utils/getEvents';
 import { sortEvents } from 'utils/sortEvents';
 import EventListCardItem from 'components/EventListCardItem';
 
+import PageSkeleton from 'components/PageSkeleton';
 import { EventList } from './Events.styled';
 
 const Events = ({ category, sortBy }) => {
@@ -35,7 +36,7 @@ const Events = ({ category, sortBy }) => {
     return () => {};
   }, []);
 
-  return (
+  return events ? (
     <EventList>
       {sortedEvents.map(card => (
         <EventListCardItem
@@ -45,6 +46,8 @@ const Events = ({ category, sortBy }) => {
         />
       ))}
     </EventList>
+  ) : (
+    <PageSkeleton />
   );
 };
 

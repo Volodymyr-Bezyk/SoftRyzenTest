@@ -1,8 +1,4 @@
-import {
-  PageSkeletonContent,
-  PageSkeletonWrap,
-  LayoutSkeletonWrap,
-} from './PageSkeleton.styled';
+import { PageSkeletonContent, PageSkeletonWrap } from './PageSkeleton.styled';
 
 const PageSkeleton = props => {
   return (
