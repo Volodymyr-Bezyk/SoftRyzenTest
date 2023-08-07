@@ -18,6 +18,7 @@ export const EventTitle = styled.h2`
   font-size: ${p => p.theme.fontSizes[6]}px;
   font-weight: ${p => p.theme.fontWeights.semiBold};
   line-height: normal;
+  text-transform: capitalize;
 
   @media (min-width: ${p => p.theme.screens.tablet}) {
     font-size: ${p => p.theme.fontSizes[7]}px;

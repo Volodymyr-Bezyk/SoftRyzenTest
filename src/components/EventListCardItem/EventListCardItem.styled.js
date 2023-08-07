@@ -126,6 +126,7 @@ export const CardTitle = styled.h2`
   font-size: ${p => p.theme.fontSizes[4]}px;
   font-weight: ${p => p.theme.fontWeights.medium};
   line-height: 1.5;
+  text-transform: capitalize;
 `;
 export const CardDescription = styled.p`
   padding: ${p => p.theme.space[4]}px ${p => p.theme.space[8]}px;
@@ -149,21 +150,29 @@ export const CardMoreInfoLink = styled(Link)`
 
   padding: ${p => p.theme.space[5]}px ${p => p.theme.space[12]}px;
   border-radius: ${p => p.theme.radii.button};
-  background-color: ${p => p.theme.colors.accent};
+  background-color: ${p =>
+    p.$disabled ? p.theme.colors.disabled : p.theme.colors.accent};
   box-shadow: ${p => p.theme.shadows.button};
   text-decoration: none;
-  cursor: pointer;
 
   color: ${p => p.theme.colors.white};
   font-family: ${p => p.theme.fontFamily.primary};
   font-size: ${p => p.theme.fontSizes[3]}px;
   font-weight: ${p => p.theme.fontWeights.medium};
   line-height: 1.42;
+  text-align: center;
 
   transition: background-color 250ms ease-in-out;
 
+  cursor: ${p =>
+    p.$disabled ? p.theme.cursor.notAllow : p.theme.cursor.pointer};
+
+  pointer-events: ${p =>
+    p.$disabled ? p.theme.pEvents.none : p.theme.pEvents.all};
+
   &:hover,
   &:focus {
-    background-color: ${p => p.theme.colors.buttonHoverBg};
+    background-color: ${p =>
+      p.$disabled ? p.theme.colors.disabled : p.theme.colors.buttonHoverBg};
   }
 `;

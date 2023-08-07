@@ -1,4 +1,5 @@
 import EllipsisText from 'react-ellipsis-text';
+import { dateFormatter } from 'utils/dateFormatter';
 import { convertTimeFormat } from 'utils/converTimeFormat';
 import defaultPhoto from '../../assets/default.jpg';
 
@@ -37,6 +38,8 @@ const EventListCardItem = props => {
     linkLocation,
   } = props;
 
+  const formattedDate = dateFormatter(date);
+
   return (
     <EventListItem>
       <EventListCard>
@@ -56,7 +59,8 @@ const EventListCardItem = props => {
         <InfoThumb className="infoThumb">
           <TimeDetails>
             <CardDate>
-              {date.split('.')[0]}.{date.split('.')[1]}.{date.slice(-2)} at{' '}
+              {formattedDate.split('.')[0]}.{formattedDate.split('.')[1]}.
+              {formattedDate.slice(-2)} at{' '}
               {convertTimeFormat(time).split(' ')[0]}
             </CardDate>
             <CardLocation>{location}</CardLocation>
@@ -70,10 +74,11 @@ const EventListCardItem = props => {
             </CardDescription>
             <CardLinkWrap>
               <CardMoreInfoLink
+                $disabled={Date.parse(date) <= Date.now()}
                 state={{ from: linkLocation }}
                 to={`event/${id}`}
               >
-                More info
+                {Date.parse(date) > Date.now() ? 'More info' : 'Expired'}
               </CardMoreInfoLink>
             </CardLinkWrap>
           </CardInfo>

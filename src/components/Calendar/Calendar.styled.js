@@ -166,15 +166,6 @@ export const StyledDatetime = styled(Datetime)`
       line-height: ${p => p.theme.lineHeights.max};
       opacity: ${p => p.open && 1};
     }
-
-    /* &:hover,
-    &:focus {
-      border-color: ${p => p.theme.colors.buttonHoverBg};
-    } */
-  }
-
-  .rdt {
-    /* position: static; */
   }
 
   .rdtPicker {
@@ -187,7 +178,6 @@ export const StyledDatetime = styled(Datetime)`
     height: 348px;
     padding: 20px;
 
-    /* margin-top: 8px; */
     z-index: 99999 !important;
 
     border-top-right-radius: 11px;
@@ -291,9 +281,7 @@ export const StyledDatetime = styled(Datetime)`
   .dow:last-child {
     color: #ff2b77;
   }
-  tbody tr:last-child {
-    display: none;
-  }
+
   tfoot {
     display: none;
   }

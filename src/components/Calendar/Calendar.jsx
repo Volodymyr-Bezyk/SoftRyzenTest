@@ -24,7 +24,7 @@ const Calendar = props => {
 
   useEffect(() => {
     if (value && firstRender.current) {
-      setSelectedDate(value);
+      setSelectedDate(dateFormatter(value));
       field?.onChange(value);
       firstRender.current = false;
     }
@@ -37,7 +37,7 @@ const Calendar = props => {
 
   const onChange = date => {
     setSelectedDate(dateFormatter(date));
-    field?.onChange(dateFormatter(date));
+    field?.onChange(date);
   };
 
   const toggleCalendar = () => {
@@ -102,7 +102,10 @@ const Calendar = props => {
       dateFormat="DD.MM.YYYY"
       input={true}
       open={!calendarClosed}
-      onChange={onChange}
+      onChange={date => {
+        console.log('date', date);
+        onChange(date);
+      }}
       renderInput={props => <CalendarContent {...props} />}
     />
   );

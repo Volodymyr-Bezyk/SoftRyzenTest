@@ -53,129 +53,127 @@ code {
     monospace;
 }
 
-body {
+.ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-bottomLeft {
+  box-sizing: border-box;
+  width: 240px;
+  height: 160px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0px 16px; */
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}
+
+.ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-topLeft {
+  box-sizing: border-box;
+  width: 240px;
+  height: 160px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0px 16px; */
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+}
+@media screen and (min-width: 768px) {
   .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-bottomLeft {
-    box-sizing: border-box;
-    width: 240px;
-    height: 160px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    /* padding: 0px 16px; */
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+    width: 308px;
   }
-
   .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-topLeft {
-    box-sizing: border-box;
-    width: 240px;
-    height: 160px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    /* padding: 0px 16px; */
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+    width: 308px;
   }
-  @media screen and (min-width: 768px) {
-    .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-bottomLeft {
-      width: 308px;
-    }
-    .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-topLeft {
-      width: 308px;
-    }
+}
+@media screen and (min-width: 1440px) {
+  .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-bottomLeft {
+    width: 372px;
   }
-  @media screen and (min-width: 1440px) {
-    .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-bottomLeft {
-      width: 372px;
-    }
-    .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-topLeft {
-      width: 372px;
-    }
+  .ant-picker-dropdown.css-dev-only-do-not-override-fpg3f5.custom-time-picker.ant-picker-dropdown-placement-topLeft {
+    width: 372px;
   }
+}
 
-  .ant-picker-panel-layout {
-    justify-content: center;
-  }
+.ant-picker-panel-layout {
+  justify-content: center;
+}
 
-  .css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
-    .ant-picker-panel-container
-    .ant-picker-panel {
-    width: 100%;
-  }
-  .ant-picker-panel.ant-picker-panel-focused {
-    width: 100%;
-  }
+.css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
+  .ant-picker-panel-container
+  .ant-picker-panel {
+  width: 100%;
+}
+.ant-picker-panel.ant-picker-panel-focused {
+  width: 100%;
+}
 
-  .ant-picker-footer {
-    display: none;
-  }
+.ant-picker-footer {
+  display: none;
+}
 
-  .ant-picker-time-panel-cell {
-    border-inline-start: none;
-  }
-  .css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
-    .ant-picker-time-panel-column:not(:first-child) {
-    border-inline-start: none;
-  }
-  .ant-picker-time-panel-cell {
-    padding: 12px;
+.ant-picker-time-panel-cell {
+  border-inline-start: none;
+}
+.css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
+  .ant-picker-time-panel-column:not(:first-child) {
+  border-inline-start: none;
+}
+.ant-picker-time-panel-cell {
+  padding: 12px;
 
-    color: #aca7c3;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-  .css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
-    .ant-picker-time-panel-column
-    > li.ant-picker-time-panel-cell-selected
-    .ant-picker-time-panel-cell-inner {
-    padding: 12px 16px;
-    height: 48px;
-
-    color: #3f3f3f;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-
-    border-radius: 0;
-    border-bottom: 1px solid #aca7c3;
-    border-top: 1px solid #aca7c3;
-    background-color: transparent;
-  }
-
+  color: #aca7c3;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
   .ant-picker-time-panel-cell-inner {
-    width: 100%;
-  }
-  .css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
-    .ant-picker-time-panel-column
-    > li.ant-picker-time-panel-cell-selected
-    .ant-picker-time-panel-cell-inner {
-    background-color: #fff;
-  }
+  padding: 12px 16px;
+  height: 48px;
 
-  .css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
-    .ant-picker-time-panel-column
-    > li.ant-picker-time-panel-cell
-    .ant-picker-time-panel-cell-inner {
-    width: 100%;
-    text-align: center;
-    padding: 12px 16px;
-    height: 48px;
-  }
+  color: #3f3f3f;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 
-  .css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
-    .ant-picker-time-panel-column
-    > li.ant-picker-time-panel-cell
-    .ant-picker-time-panel-cell-inner:hover {
-    background-color: rgba(123, 97, 255, 0.28);
-  }
+  border-radius: 0;
+  border-bottom: 1px solid #aca7c3;
+  border-top: 1px solid #aca7c3;
+  background-color: transparent;
+}
+
+.ant-picker-time-panel-cell-inner {
+  width: 100%;
+}
+.css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner {
+  background-color: #fff;
+}
+
+.css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell
+  .ant-picker-time-panel-cell-inner {
+  width: 100%;
+  text-align: center;
+  padding: 12px 16px;
+  height: 48px;
+}
+
+.css-dev-only-do-not-override-fpg3f5.ant-picker-dropdown
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell
+  .ant-picker-time-panel-cell-inner:hover {
+  background-color: rgba(123, 97, 255, 0.28);
 }

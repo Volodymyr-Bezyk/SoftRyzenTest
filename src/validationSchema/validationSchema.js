@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 export const validationSchema = yup.object({
-  title: yup.string().required().min(5).max(20),
+  title: yup.string().required().min(5).max(40),
 
   description: yup.string().required().min(20),
 

@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import Container from 'components/Container';
 import AppBar from 'components/AppBar';
+import PageSkeleton from 'components/PageSkeleton';
 import { LayoutWrap, Heading, MainContent } from './Layout.styled';
 
 const Layout = () => {
@@ -16,7 +17,7 @@ const Layout = () => {
 
       <MainContent>
         <Container>
-          <Suspense fallback={null}>
+          <Suspense fallback={<PageSkeleton />}>
             <Outlet />
           </Suspense>
         </Container>

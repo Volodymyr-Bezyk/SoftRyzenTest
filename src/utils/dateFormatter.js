@@ -1,9 +1,3 @@
-export function dateFormatter(inputDate, period) {
-  const date = new Date(inputDate);
+import dayjs from 'dayjs';
 
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const year = date.getFullYear();
-
-  return `${day}.${month}.${year}`;
-}
+export const dateFormatter = inputDate => dayjs(inputDate).format('DD.MM.YYYY');

@@ -15,6 +15,7 @@ const theme = {
     title: '#1C1B1F',
     text: '#49454F',
     hover: '#6243FF',
+    disabled: '#ACA7C3',
   },
   space: [
     0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,
@@ -68,6 +69,14 @@ const theme = {
     mobile: '320px',
     tablet: '768px',
     desktop: '1440px',
+  },
+  cursor: {
+    pointer: 'pointer',
+    notAllow: 'not-allowed',
+  },
+  pEvents: {
+    all: 'all',
+    none: 'none',
   },
 };
 
