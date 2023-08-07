@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[85],{8769:function(e,t,n){n.r(t),n.d(t,{default:function(){return u}});var r=n(7769),a=n(4453),c=n(4102),s=n(184),u=function(){return(0,s.jsxs)(s.Fragment,{children:[(0,s.jsx)(r.Z,{}),(0,s.jsx)(a.Z,{title:"Create new event",children:(0,s.jsx)(c.Z,{page:"newEvent"})})]})}}}]);
+//# sourceMappingURL=85.83a8264f.chunk.js.map
