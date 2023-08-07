@@ -16,13 +16,13 @@ const Events = ({ category, sortBy }) => {
 
   const searchedEvents = events.filter(
     event =>
-      event.title.toLowerCase().includes(searchField.toLowerCase()) ||
-      event.description.toLowerCase().includes(searchField.toLowerCase())
+      event.title.toLowerCase().includes(searchField?.toLowerCase()) ||
+      event.description.toLowerCase().includes(searchField?.toLowerCase())
   );
 
   const filteredEvents = searchedEvents.filter(
     event =>
-      event.category.value.toLowerCase() === category.toLowerCase() ||
+      event.category.value?.toLowerCase() === category?.toLowerCase() ||
       category === ''
   );
   const sortedEvents = sortEvents(filteredEvents, sortBy);
@@ -36,18 +36,23 @@ const Events = ({ category, sortBy }) => {
     return () => {};
   }, []);
 
-  return events ? (
-    <EventList>
-      {sortedEvents.map(card => (
-        <EventListCardItem
-          key={card.id}
-          card={card}
-          linkLocation={linkLocation}
-        />
-      ))}
-    </EventList>
-  ) : (
-    <PageSkeleton />
+  return (
+    <>
+      {events ? (
+        <EventList>
+          {sortedEvents.map(card => (
+            <EventListCardItem
+              key={card.id}
+              card={card}
+              linkLocation={linkLocation}
+            />
+          ))}
+        </EventList>
+      ) : (
+        <PageSkeleton />
+      )}
+      {sortedEvents.length === 0 && <p>No such events yet</p>}
+    </>
   );
 };
 

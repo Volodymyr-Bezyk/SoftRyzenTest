@@ -103,7 +103,6 @@ const Calendar = props => {
       input={true}
       open={!calendarClosed}
       onChange={date => {
-        console.log('date', date);
         onChange(date);
       }}
       renderInput={props => <CalendarContent {...props} />}
