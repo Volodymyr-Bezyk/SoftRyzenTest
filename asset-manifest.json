@@ -1,36 +1,36 @@
 {
   "files": {
-    "main.css": "/softRyzenTest/static/css/main.4d834b40.css",
-    "main.js": "/softRyzenTest/static/js/main.7e5e9183.js",
+    "main.css": "/softRyzenTest/static/css/main.e763feb6.css",
+    "main.js": "/softRyzenTest/static/js/main.6b2828db.js",
     "static/js/114.194fd717.chunk.js": "/softRyzenTest/static/js/114.194fd717.chunk.js",
     "static/css/47.6c29835d.chunk.css": "/softRyzenTest/static/css/47.6c29835d.chunk.css",
     "static/js/47.26e5afbc.chunk.js": "/softRyzenTest/static/js/47.26e5afbc.chunk.js",
-    "static/js/656.a946c6d2.chunk.js": "/softRyzenTest/static/js/656.a946c6d2.chunk.js",
+    "static/js/656.b9979e24.chunk.js": "/softRyzenTest/static/js/656.b9979e24.chunk.js",
     "static/css/689.6c29835d.chunk.css": "/softRyzenTest/static/css/689.6c29835d.chunk.css",
     "static/js/689.90e373fc.chunk.js": "/softRyzenTest/static/js/689.90e373fc.chunk.js",
     "static/js/91.e4e6480f.chunk.js": "/softRyzenTest/static/js/91.e4e6480f.chunk.js",
     "static/js/427.c0d977d0.chunk.js": "/softRyzenTest/static/js/427.c0d977d0.chunk.js",
     "static/js/344.1fb24912.chunk.js": "/softRyzenTest/static/js/344.1fb24912.chunk.js",
-    "static/js/20.fc266882.chunk.js": "/softRyzenTest/static/js/20.fc266882.chunk.js",
+    "static/js/20.94882a63.chunk.js": "/softRyzenTest/static/js/20.94882a63.chunk.js",
     "static/media/defaultWide.jpg": "/softRyzenTest/static/media/defaultWide.ccf76055a15049202fb4.jpg",
     "static/media/default.jpg": "/softRyzenTest/static/media/default.fc42fdb980b9e6cc1c1a.jpg",
     "index.html": "/softRyzenTest/index.html",
     "static/media/Vector.svg": "/softRyzenTest/static/media/Vector.64b69de0699e22cd8ff9f330554bfb07.svg",
-    "main.4d834b40.css.map": "/softRyzenTest/static/css/main.4d834b40.css.map",
-    "main.7e5e9183.js.map": "/softRyzenTest/static/js/main.7e5e9183.js.map",
+    "main.e763feb6.css.map": "/softRyzenTest/static/css/main.e763feb6.css.map",
+    "main.6b2828db.js.map": "/softRyzenTest/static/js/main.6b2828db.js.map",
     "114.194fd717.chunk.js.map": "/softRyzenTest/static/js/114.194fd717.chunk.js.map",
     "47.6c29835d.chunk.css.map": "/softRyzenTest/static/css/47.6c29835d.chunk.css.map",
     "47.26e5afbc.chunk.js.map": "/softRyzenTest/static/js/47.26e5afbc.chunk.js.map",
-    "656.a946c6d2.chunk.js.map": "/softRyzenTest/static/js/656.a946c6d2.chunk.js.map",
+    "656.b9979e24.chunk.js.map": "/softRyzenTest/static/js/656.b9979e24.chunk.js.map",
     "689.6c29835d.chunk.css.map": "/softRyzenTest/static/css/689.6c29835d.chunk.css.map",
     "689.90e373fc.chunk.js.map": "/softRyzenTest/static/js/689.90e373fc.chunk.js.map",
     "91.e4e6480f.chunk.js.map": "/softRyzenTest/static/js/91.e4e6480f.chunk.js.map",
     "427.c0d977d0.chunk.js.map": "/softRyzenTest/static/js/427.c0d977d0.chunk.js.map",
     "344.1fb24912.chunk.js.map": "/softRyzenTest/static/js/344.1fb24912.chunk.js.map",
-    "20.fc266882.chunk.js.map": "/softRyzenTest/static/js/20.fc266882.chunk.js.map"
+    "20.94882a63.chunk.js.map": "/softRyzenTest/static/js/20.94882a63.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d834b40.css",
-    "static/js/main.7e5e9183.js"
+    "static/css/main.e763feb6.css",
+    "static/js/main.6b2828db.js"
   ]
 }
