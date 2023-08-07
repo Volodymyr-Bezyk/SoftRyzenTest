@@ -1,7 +1,5 @@
 @import-normalize; /* bring in normalize.css styles */
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@300;400;500;600&display=swap');
-/* @import 'antd/dist/antd.css'; */
-@import './components/Clock/customClockStyles.css';
 
 * {
   box-sizing: border-box;

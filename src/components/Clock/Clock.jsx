@@ -1,4 +1,5 @@
 import { TimePicker } from 'antd';
+import './ClockStyles.css';
 import dayjs from 'dayjs';
 import { useState, useEffect, useRef } from 'react';
 import { MdExpandMore, MdExpandLess } from 'react-icons/md';
